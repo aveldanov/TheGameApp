@@ -24,7 +24,7 @@ class APICaller{
                 completion(.success(arrOffline))
                 return
             }
-            
+    
             //TODO UserDefaults
             if let str = String(data: data, encoding: .utf8){
             let arr = Array(str.filter{!$0.isWhitespace})

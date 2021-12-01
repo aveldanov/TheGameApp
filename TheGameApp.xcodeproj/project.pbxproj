@@ -16,6 +16,7 @@
 		21E056A027572B6800AA01A7 /* TheGameAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E0569F27572B6800AA01A7 /* TheGameAppTests.swift */; };
 		21E056AA27572B6800AA01A7 /* TheGameAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E056A927572B6800AA01A7 /* TheGameAppUITests.swift */; };
 		21E056AC27572B6800AA01A7 /* TheGameAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E056AB27572B6800AA01A7 /* TheGameAppUITestsLaunchTests.swift */; };
+		21E056B927572F0E00AA01A7 /* APICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E056B827572F0E00AA01A7 /* APICaller.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		21E056A527572B6800AA01A7 /* TheGameAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TheGameAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		21E056A927572B6800AA01A7 /* TheGameAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheGameAppUITests.swift; sourceTree = "<group>"; };
 		21E056AB27572B6800AA01A7 /* TheGameAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheGameAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		21E056B827572F0E00AA01A7 /* APICaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICaller.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 			children = (
 				21E0568827572B6600AA01A7 /* AppDelegate.swift */,
 				21E0568A27572B6600AA01A7 /* SceneDelegate.swift */,
+				21E056BA27572F1300AA01A7 /* Services */,
 				21E0568C27572B6600AA01A7 /* ViewController.swift */,
 				21E0568E27572B6600AA01A7 /* Main.storyboard */,
 				21E0569127572B6700AA01A7 /* Assets.xcassets */,
@@ -125,6 +128,14 @@
 				21E056AB27572B6800AA01A7 /* TheGameAppUITestsLaunchTests.swift */,
 			);
 			path = TheGameAppUITests;
+			sourceTree = "<group>";
+		};
+		21E056BA27572F1300AA01A7 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				21E056B827572F0E00AA01A7 /* APICaller.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -261,6 +272,7 @@
 				21E0568D27572B6600AA01A7 /* ViewController.swift in Sources */,
 				21E0568927572B6600AA01A7 /* AppDelegate.swift in Sources */,
 				21E0568B27572B6600AA01A7 /* SceneDelegate.swift in Sources */,
+				21E056B927572F0E00AA01A7 /* APICaller.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

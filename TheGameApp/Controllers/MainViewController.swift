@@ -19,12 +19,25 @@ class MainViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
+    @IBOutlet weak var resetButtonOutlet: BounceButton!
+    @IBOutlet var inputButtons: [BounceButton]!
+    
+    
     let urlString = Constants.urlString
 
     
+    
     var lines : [Line] = [
-    Line(arr: [3,4,5,5], verifyArr: ["white", "black","none","none"], buttonCheck: false),
-    Line(arr: [3,4,3,5], verifyArr: ["black", "black","none","none"], buttonCheck: true)
+    Line(arr: [3,4,5,5], verifyArr: ["⚪️","⚫️","⭕️","⭕️"], buttonCheck: false),
+    Line(arr: [1,4,3,5], verifyArr: ["⚪️","⚫️","⚫️","⭕️"], buttonCheck: true),
+    Line(arr: [3,4,5,5], verifyArr: ["⚪️","⚫️","⭕️","⭕️"], buttonCheck: false),
+    Line(arr: [3,4,5,5], verifyArr: ["⚪️","⚫️","⭕️","⭕️"], buttonCheck: false),
+    Line(arr: [3,4,5,5], verifyArr: ["⚪️","⚫️","⭕️","⭕️"], buttonCheck: false),
+    Line(arr: [3,4,5,5], verifyArr: ["⚪️","⚫️","⭕️","⭕️"], buttonCheck: false),
+    Line(arr: [8,8,8,8], verifyArr: ["⚪️","⚫️","⭕️","⭕️"], buttonCheck: false),
+    Line(arr: [3,4,5,5], verifyArr: ["⚪️","⚫️","⭕️","⭕️"], buttonCheck: false),
+    Line(arr: [3,4,5,5], verifyArr: ["⚪️","⚫️","⚪️","⚪️"], buttonCheck: false),
+    Line(arr: [3,4,5,5], verifyArr: ["⚪️","⚫️","⭕️","⭕️"], buttonCheck: false)
     ]
     
     override func viewDidLoad() {
@@ -32,9 +45,14 @@ class MainViewController: UIViewController {
         
         tableView.dataSource = self
         
-        tableView.register(UINib(nibName: "LineTableViewCell", bundle: nil), forCellReuseIdentifier: "cell")
+//        tableView.register(LineTableViewCell.nib(), forCellReuseIdentifier: LineTableViewCell.identifier)
         
+//        tableView.alwaysBounceVertical = false
+        tableView.allowsSelection = false
+        tableView.isScrollEnabled = false
+        tableView.rowHeight = 60
         
+        resetButtonOutlet.showsTouchWhenHighlighted = true
         let url = URL(string: urlString)!
 
         APICaller.shared.fetchData(url) { result in
@@ -43,7 +61,23 @@ class MainViewController: UIViewController {
         
         
     }
+    
+    
+    
+    
+    @IBAction func resetButtonTapped(_ sender: UIButton) {
+        
+        print("touchBB")
+        
+    }
+    
 
+    @IBAction func inputButtonTapped(_ sender: UIButton) {
+        
+        print("Input",sender.tag)
+    }
+    
+    
 
 }
 
@@ -57,7 +91,7 @@ extension MainViewController: UITableViewDataSource{
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return lines.count
     }
     
     
@@ -66,15 +100,12 @@ extension MainViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! LineTableViewCell
+        
+        cell.backgroundColor = .clear
+        
+        let model = lines[indexPath.row]
+        cell.configureLine(with: model)
+      
         return cell
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
 }

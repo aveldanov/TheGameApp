@@ -52,19 +52,264 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="pDs-Yb-JeA">
-                                <rect key="frame" x="0.0" y="88" width="414" height="591"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background-Bubbles" translatesAutoresizingMaskIntoConstraints="NO" id="jVd-v5-uUK">
+                                <rect key="frame" x="0.0" y="776" width="414" height="120"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="pnJ-GA-9pX"/>
+                                </constraints>
+                            </imageView>
+                            <view contentMode="scaleToFill" id="qOV-Ue-JXo">
+                                <rect key="frame" x="0.0" y="684" width="414" height="4"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" red="0.32549019607843138" green="0.396078431372549" blue="0.47450980392156861" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="pDs-Yb-JeA">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="684"/>
+                                <color key="backgroundColor" red="0.23921568627450979" green="0.23921568627450979" blue="0.23921568627450979" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="120" id="dH5-4c-rEC" customClass="LineTableViewCell" customModule="TheGameApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="120"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dH5-4c-rEC" id="QlZ-of-xRi">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="120"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="VOX-YQ-nHl">
+                                                    <rect key="frame" x="10" y="1" width="280" height="40"/>
+                                                    <subviews>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="0" translatesAutoresizingMaskIntoConstraints="NO" id="faF-M7-H2E">
+                                                            <rect key="frame" x="0.0" y="0.0" width="70" height="40"/>
+                                                        </imageView>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="0" translatesAutoresizingMaskIntoConstraints="NO" id="P7U-bh-YNw">
+                                                            <rect key="frame" x="70" y="0.0" width="70" height="40"/>
+                                                        </imageView>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="0" translatesAutoresizingMaskIntoConstraints="NO" id="tud-dV-kFA">
+                                                            <rect key="frame" x="140" y="0.0" width="70" height="40"/>
+                                                        </imageView>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="0" translatesAutoresizingMaskIntoConstraints="NO" id="hd6-98-ACf">
+                                                            <rect key="frame" x="210" y="0.0" width="70" height="40"/>
+                                                        </imageView>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="280" id="8yb-Ob-hXI"/>
+                                                        <constraint firstAttribute="height" constant="40" id="GNg-o4-JEa"/>
+                                                    </constraints>
+                                                </stackView>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dg2-sg-Gdh">
+                                                    <rect key="frame" x="0.0" y="51" width="414" height="1"/>
+                                                    <color key="backgroundColor" red="0.32549019607843138" green="0.396078431372549" blue="0.47450980392156861" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="1" id="pZK-qf-35s"/>
+                                                    </constraints>
+                                                </view>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="4X0-ui-jbb" userLabel="TrafficLightStack">
+                                                    <rect key="frame" x="320" y="8" width="30" height="28"/>
+                                                    <subviews>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="jeE-Ff-fi4">
+                                                            <rect key="frame" x="0.0" y="0.0" width="30" height="12"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="⚪️" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DRu-7r-xP2">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="14" height="12"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="⚪️" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MXs-wu-Pgc">
+                                                                    <rect key="frame" x="16" y="0.0" width="14" height="12"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                        </stackView>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="Rvg-Pt-F21">
+                                                            <rect key="frame" x="0.0" y="16" width="30" height="12"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="⚪️" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7HV-nZ-JW0">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="14" height="12"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="⚪️" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fNc-eu-mdP">
+                                                                    <rect key="frame" x="16" y="0.0" width="14" height="12"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                        </stackView>
+                                                    </subviews>
+                                                </stackView>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TLS-yo-F2D">
+                                                    <rect key="frame" x="313" y="5" width="44" height="31"/>
+                                                    <color key="tintColor" systemColor="systemOrangeColor"/>
+                                                    <state key="normal" title="Button"/>
+                                                    <buttonConfiguration key="configuration" style="filled" title="⁉️"/>
+                                                    <connections>
+                                                        <action selector="checkButtonTapped:" destination="dH5-4c-rEC" eventType="touchUpInside" id="hnp-eF-sFA"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="VOX-YQ-nHl" firstAttribute="leading" secondItem="QlZ-of-xRi" secondAttribute="leading" constant="10" id="4ew-JW-vZ5"/>
+                                                <constraint firstItem="4X0-ui-jbb" firstAttribute="leading" secondItem="VOX-YQ-nHl" secondAttribute="trailing" constant="30" id="9om-ew-Blb"/>
+                                                <constraint firstItem="TLS-yo-F2D" firstAttribute="leading" secondItem="VOX-YQ-nHl" secondAttribute="trailing" constant="23" id="EsZ-fj-WBl"/>
+                                                <constraint firstItem="VOX-YQ-nHl" firstAttribute="top" secondItem="QlZ-of-xRi" secondAttribute="top" constant="1" id="GYQ-Y9-OxM"/>
+                                                <constraint firstItem="4X0-ui-jbb" firstAttribute="top" secondItem="QlZ-of-xRi" secondAttribute="top" constant="8" id="PLc-WZ-ez8"/>
+                                                <constraint firstItem="dg2-sg-Gdh" firstAttribute="top" secondItem="VOX-YQ-nHl" secondAttribute="bottom" constant="10" id="gCt-wx-7WQ"/>
+                                                <constraint firstAttribute="trailing" secondItem="dg2-sg-Gdh" secondAttribute="trailing" id="q2e-TI-jrw"/>
+                                                <constraint firstItem="dg2-sg-Gdh" firstAttribute="leading" secondItem="QlZ-of-xRi" secondAttribute="leading" id="qr7-eA-Cax"/>
+                                                <constraint firstItem="TLS-yo-F2D" firstAttribute="top" secondItem="QlZ-of-xRi" secondAttribute="top" constant="5" id="rHX-aF-yEO"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="checkButtonOutlet" destination="TLS-yo-F2D" id="xjV-xr-d17"/>
+                                            <outletCollection property="imageLineCollection" destination="faF-M7-H2E" collectionClass="NSMutableArray" id="jBP-lB-Ehs"/>
+                                            <outletCollection property="imageLineCollection" destination="P7U-bh-YNw" collectionClass="NSMutableArray" id="MST-4y-Qhy"/>
+                                            <outletCollection property="imageLineCollection" destination="tud-dV-kFA" collectionClass="NSMutableArray" id="bk8-uM-HNx"/>
+                                            <outletCollection property="imageLineCollection" destination="hd6-98-ACf" collectionClass="NSMutableArray" id="l03-A7-BBN"/>
+                                            <outletCollection property="checkLabelCollection" destination="DRu-7r-xP2" collectionClass="NSMutableArray" id="1fi-Op-rac"/>
+                                            <outletCollection property="checkLabelCollection" destination="MXs-wu-Pgc" collectionClass="NSMutableArray" id="cfI-Jd-JJL"/>
+                                            <outletCollection property="checkLabelCollection" destination="7HV-nZ-JW0" collectionClass="NSMutableArray" id="7aX-kw-MIl"/>
+                                            <outletCollection property="checkLabelCollection" destination="fNc-eu-mdP" collectionClass="NSMutableArray" id="tdo-ho-aWI"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="qDj-F3-uAe" userLabel="Bottom Stack">
+                                <rect key="frame" x="10" y="688" width="280" height="148"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="Mp4-0S-uzP">
+                                        <rect key="frame" x="0.0" y="0.0" width="280" height="74"/>
+                                        <subviews>
+                                            <button opaque="NO" tag="4" contentMode="scaleToFill" verticalCompressionResistancePriority="746" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fXo-2Q-LvR" customClass="BounceButton" customModule="TheGameApp" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="70" height="74"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" image="4input"/>
+                                                <connections>
+                                                    <action selector="inputButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JjK-7Z-4rJ"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="5" contentMode="scaleToFill" verticalCompressionResistancePriority="746" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j7i-3v-IJF" customClass="BounceButton" customModule="TheGameApp" customModuleProvider="target">
+                                                <rect key="frame" x="70" y="0.0" width="70" height="74"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" image="5input"/>
+                                                <connections>
+                                                    <action selector="inputButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bK9-B6-mPI"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="6" contentMode="scaleToFill" verticalCompressionResistancePriority="746" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bu2-Go-ci0" customClass="BounceButton" customModule="TheGameApp" customModuleProvider="target">
+                                                <rect key="frame" x="140" y="0.0" width="70" height="74"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" image="6input"/>
+                                                <connections>
+                                                    <action selector="inputButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7rs-6Z-vcr"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="7" contentMode="scaleToFill" verticalCompressionResistancePriority="746" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bq4-ee-zIY" customClass="BounceButton" customModule="TheGameApp" customModuleProvider="target">
+                                                <rect key="frame" x="210" y="0.0" width="70" height="74"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" image="7input"/>
+                                                <connections>
+                                                    <action selector="inputButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZBz-RF-fAx"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="rCO-D6-yQi">
+                                        <rect key="frame" x="0.0" y="74" width="280" height="74"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="746" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yVc-VB-Pf8" customClass="BounceButton" customModule="TheGameApp" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="70" height="74"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" image="0input"/>
+                                                <connections>
+                                                    <action selector="inputButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oPL-zJ-IvL"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" verticalCompressionResistancePriority="746" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UcR-kE-xDa" customClass="BounceButton" customModule="TheGameApp" customModuleProvider="target">
+                                                <rect key="frame" x="70" y="0.0" width="70" height="74"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" image="1input"/>
+                                                <connections>
+                                                    <action selector="inputButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="umi-5n-cWB"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="2" contentMode="scaleToFill" verticalCompressionResistancePriority="746" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C2O-eZ-IqL" customClass="BounceButton" customModule="TheGameApp" customModuleProvider="target">
+                                                <rect key="frame" x="140" y="0.0" width="70" height="74"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" image="2input"/>
+                                                <connections>
+                                                    <action selector="inputButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ukj-Sl-5Wj"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="3" contentMode="scaleToFill" verticalCompressionResistancePriority="746" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h4S-Zd-vmY" customClass="BounceButton" customModule="TheGameApp" customModuleProvider="target">
+                                                <rect key="frame" x="210" y="0.0" width="70" height="74"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" image="3input"/>
+                                                <connections>
+                                                    <action selector="inputButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ncq-46-Auq"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="280" id="pB8-Ga-WMN"/>
+                                </constraints>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bAc-Lg-Zi9" customClass="BounceButton" customModule="TheGameApp" customModuleProvider="target">
+                                <rect key="frame" x="286" y="728" width="120" height="50"/>
+                                <color key="tintColor" red="0.32549019607843138" green="0.396078431372549" blue="0.47450980392156861" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <size key="titleShadowOffset" width="16" height="23"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="reset"/>
+                                <connections>
+                                    <action selector="resetButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uot-sR-Z8q"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemRedColor"/>
+                        <color key="backgroundColor" red="0.23921568627450979" green="0.23921568627450979" blue="0.23921568627450979" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="pDs-Yb-JeA" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="HtQ-hZ-Aai"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="bAc-Lg-Zi9" secondAttribute="trailing" constant="8" id="L7C-i4-2UK"/>
+                            <constraint firstItem="qOV-Ue-JXo" firstAttribute="top" secondItem="pDs-Yb-JeA" secondAttribute="bottom" id="YWx-6E-ybG"/>
+                            <constraint firstItem="jVd-v5-uUK" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="fFT-h6-2fz"/>
+                            <constraint firstAttribute="trailing" secondItem="pDs-Yb-JeA" secondAttribute="trailing" id="g0R-DH-glr"/>
+                            <constraint firstItem="bAc-Lg-Zi9" firstAttribute="top" secondItem="qOV-Ue-JXo" secondAttribute="bottom" constant="40" id="g8F-eF-cZn"/>
+                            <constraint firstItem="pDs-Yb-JeA" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="iz4-SF-P2b"/>
+                            <constraint firstItem="qDj-F3-uAe" firstAttribute="top" secondItem="qOV-Ue-JXo" secondAttribute="bottom" id="nOy-Pz-H6d"/>
+                            <constraint firstAttribute="bottom" secondItem="jVd-v5-uUK" secondAttribute="bottom" id="oDN-RV-UUC"/>
+                            <constraint firstItem="jVd-v5-uUK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="qgA-be-Lo7"/>
+                            <constraint firstItem="qDj-F3-uAe" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="ueF-0R-xJG"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Mt9-EU-dhg"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <connections>
+                        <outlet property="resetButtonOutlet" destination="bAc-Lg-Zi9" id="Y8c-np-27S"/>
                         <outlet property="tableView" destination="pDs-Yb-JeA" id="C5z-IZ-QQp"/>
+                        <outletCollection property="inputButtons" destination="yVc-VB-Pf8" collectionClass="NSMutableArray" id="rXR-WG-uVP"/>
+                        <outletCollection property="inputButtons" destination="UcR-kE-xDa" collectionClass="NSMutableArray" id="sPA-MQ-fOR"/>
+                        <outletCollection property="inputButtons" destination="C2O-eZ-IqL" collectionClass="NSMutableArray" id="SMP-Ot-7eS"/>
+                        <outletCollection property="inputButtons" destination="h4S-Zd-vmY" collectionClass="NSMutableArray" id="oSW-d8-nPx"/>
+                        <outletCollection property="inputButtons" destination="fXo-2Q-LvR" collectionClass="NSMutableArray" id="Qws-hn-Q5c"/>
+                        <outletCollection property="inputButtons" destination="j7i-3v-IJF" collectionClass="NSMutableArray" id="QKg-Gb-Vbb"/>
+                        <outletCollection property="inputButtons" destination="bu2-Go-ci0" collectionClass="NSMutableArray" id="FTC-g3-1N3"/>
+                        <outletCollection property="inputButtons" destination="bq4-ee-zIY" collectionClass="NSMutableArray" id="AK8-G9-dDk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -107,14 +352,22 @@
         </scene>
     </scenes>
     <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
+        <image name="0" width="60" height="60"/>
+        <image name="0input" width="60" height="60"/>
+        <image name="1input" width="60" height="60"/>
+        <image name="2input" width="60" height="60"/>
+        <image name="3input" width="60" height="60"/>
+        <image name="4input" width="60" height="60"/>
+        <image name="5input" width="60" height="60"/>
+        <image name="6input" width="60" height="60"/>
+        <image name="7input" width="60" height="60"/>
+        <image name="Background-Bubbles" width="352" height="102"/>
+        <image name="reset" width="96" height="36"/>
         <systemColor name="systemGreenColor">
             <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
-        <systemColor name="systemRedColor">
-            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemYellowColor">
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

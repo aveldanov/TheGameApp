@@ -1,20 +1,8 @@
 
-
-
 var pattern = [1,2,3,4]
-
 var input = [5,5,5,5]
-
 var close = 0
 
-//let pmap = pattern.map{($0,1)}
-//
-//print(pmap)
-//
-//let patternDict = Dictionary(pmap, uniquingKeysWith: +) // [3:1, 4:3]
-//
-//
-//print(patternDict)
 
 
 var dictPatter = [Int:Int]()

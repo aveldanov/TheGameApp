@@ -17,6 +17,7 @@
 		21A8BD372758AF2E00F7BD54 /* LineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A8BD362758AF2E00F7BD54 /* LineTableViewCell.swift */; };
 		21A8BD3B2758BCE700F7BD54 /* LineViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A8BD3A2758BCE700F7BD54 /* LineViewModel.swift */; };
 		21A8BD3E2759C40200F7BD54 /* GameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A8BD3D2759C40200F7BD54 /* GameManager.swift */; };
+		21A8BD402759F5CB00F7BD54 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 21A8BD3F2759F5CB00F7BD54 /* README.md */; };
 		21E0568927572B6600AA01A7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E0568827572B6600AA01A7 /* AppDelegate.swift */; };
 		21E0568B27572B6600AA01A7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E0568A27572B6600AA01A7 /* SceneDelegate.swift */; };
 		21E0568D27572B6600AA01A7 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E0568C27572B6600AA01A7 /* MainViewController.swift */; };
@@ -57,6 +58,7 @@
 		21A8BD362758AF2E00F7BD54 /* LineTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineTableViewCell.swift; sourceTree = "<group>"; };
 		21A8BD3A2758BCE700F7BD54 /* LineViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineViewModel.swift; sourceTree = "<group>"; };
 		21A8BD3D2759C40200F7BD54 /* GameManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameManager.swift; sourceTree = "<group>"; };
+		21A8BD3F2759F5CB00F7BD54 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		21E0568527572B6600AA01A7 /* TheGameApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheGameApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		21E0568827572B6600AA01A7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		21E0568A27572B6600AA01A7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -170,6 +172,7 @@
 		21E0567C27572B6600AA01A7 = {
 			isa = PBXGroup;
 			children = (
+				21A8BD3F2759F5CB00F7BD54 /* README.md */,
 				21E0568727572B6600AA01A7 /* TheGameApp */,
 				21E0569E27572B6800AA01A7 /* TheGameAppTests */,
 				21E056A827572B6800AA01A7 /* TheGameAppUITests */,
@@ -338,6 +341,7 @@
 			files = (
 				21E0569527572B6700AA01A7 /* LaunchScreen.storyboard in Resources */,
 				21A8BCEE27575CAB00F7BD54 /* LineTableViewCell.xib in Resources */,
+				21A8BD402759F5CB00F7BD54 /* README.md in Resources */,
 				21E0569227572B6700AA01A7 /* Assets.xcassets in Resources */,
 				21E0569027572B6600AA01A7 /* Main.storyboard in Resources */,
 			);

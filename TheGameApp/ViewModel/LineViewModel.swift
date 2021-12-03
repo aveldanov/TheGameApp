@@ -16,5 +16,20 @@ struct LineViewModel{
         return lines.count
     }
     
+    var row: Int
+    
+    var arrNumbersVM: [Int]{
+        return lines[row].arr
+    }
+    
+    var verifyArrVM: [String]{
+        return lines[row].verifyArr
+    }
+    
+    
+    var isButtonCheck: Bool{
+        return lines[row].buttonCheck
+    }
+    
     
 }

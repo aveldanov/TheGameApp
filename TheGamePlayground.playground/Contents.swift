@@ -3,9 +3,9 @@
 
 var pattern = [1,2,3,4]
 
-var input = [4,2,2,1]
+var input = [5,5,5,5]
 
-var result = 0
+var close = 0
 
 //let pmap = pattern.map{($0,1)}
 //
@@ -35,13 +35,16 @@ print(dictPatter, dictInput)
 for key in dictPatter.keys{
 
     if dictInput[key] != nil{
-        result += min(dictInput[key]!,dictPatter[key]!)
+        close += min(dictInput[key]!,dictPatter[key]!)
     }
 }
 
 
-print(result)
+print(close)
 
-var zipped = Array(zip(pattern,input)).filter{$0.0 == $0.1}.count
+var exact = Array(zip(pattern,input)).filter{$0.0 == $0.1}.count
 
-print(zipped)
+print(exact)
+
+
+print([exact, close-exact])

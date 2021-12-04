@@ -109,7 +109,7 @@ extension MainViewController{
     }
     
     func showLooserAlert(){
-        let alert = UIAlertController(title: "Loser", message: "Combination was\([1,2,3,5])])", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Loser", message: "Combination was\(lines![0].pattern)])", preferredStyle: .alert)
         let action = UIAlertAction(title: "Dismiss", style: .cancel) { action in
             print("TAPPED DISMISS")
         }
@@ -144,7 +144,6 @@ extension MainViewController: UITableViewDataSource{
       
         cell.viewModel = LineViewModel(lines: lines!, row: indexPath.row)
         
-//        cell.configureLine(with: model)
         return cell
     }
 }

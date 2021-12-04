@@ -8,18 +8,12 @@
 import Foundation
 
 
-protocol GameManagerDelegate: AnyObject{
-    
-    func gameStart(_ status: Game )
-}
-
-
 class GameManager{
 
     
     // combination
     // user input
-    
+    var pattern = MainViewController().loadedPattern
     
     var lines : [Line] = [
         Line(arr: [8,8,8,8], verifyArr: ["🟠","🟠","🟠","🟠"], pattern: [1,2,3,4]),
@@ -51,6 +45,8 @@ class GameManager{
     func running(_ input:Int?, _ verify: Bool)->([Line],Game){
         // 1234
         // 4563
+        
+        print(PAAAAAATTERN)
         
         guard let input = input else {
             return (lines,gameResult)

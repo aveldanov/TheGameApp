@@ -20,15 +20,14 @@ Created an interactive game app with enabled random number generator API from `r
  
 ### Technologies/technique used
 
--    `Random.org` API to generate random numbers
+-    `random.org` API to generate random numbers
 -    Use of graphic tools to great visuals - Canva and Appicon
--    Arrays and Dictionary manipulation
--    Sort, combine, zip
--    API session with a task to read and transfer data
--    While and For loops to control the flow of the app
--    Map methods and closures to map through elements of arrays/dictionaries
--    DispatchQueue.main.async method to run async GET requests
--    Xcode UIKit
+-    Delegate Pattern to transfer data between classes
+-    Depenency Injectction to streamline testing
+-    External library to animate textflow
+-    Combined `tableView` views
+-    MVVM model
+-    Separated business logic from views
 
 
 ### How to clone and run the app

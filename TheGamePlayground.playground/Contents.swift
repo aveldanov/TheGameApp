@@ -1,4 +1,5 @@
-//
+
+import Foundation
 //var pattern = [1,2,3,4]
 //var input = [5,5,5,5]
 //var close = 0
@@ -75,14 +76,18 @@
 
 
 let arr = [1,2,3,4]
+//
+//var circles = ["🟠","⚫️","⚪️","🟣","🟢","🔵","🟡","🔴"]
+//var circlesLoaded = [String]()
+//
+//for i in arr{
+//
+//    circlesLoaded.append(circles[i])
+//
+//}
+//
+//print(circlesLoaded)
 
-var circles = ["🟠","⚫️","⚪️","🟣","🟢","🔵","🟡","🔴"]
-var circlesLoaded = [String]()
 
-for i in arr{
-    
-    circlesLoaded.append(circles[i])
-    
-}
-
-print(circlesLoaded)
+var myData = arr.withUnsafeBufferPointer {Data(buffer: $0)}
+print(myData)

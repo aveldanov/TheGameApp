@@ -96,7 +96,7 @@ class MainViewController: UIViewController, SettingsViewControllerDelegate {
 
         let url = URL(string: urlString)!
 
-        APICaller.shared.fetchData(url) { result in
+        APICaller().fetchData(url) { result in
             switch result{
             case .success(let items):
                 self.itemsLoaded = items

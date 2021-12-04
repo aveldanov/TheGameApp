@@ -20,6 +20,7 @@
 		21A8BD402759F5CB00F7BD54 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 21A8BD3F2759F5CB00F7BD54 /* README.md */; };
 		21A8BD42275ACF9F00F7BD54 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A8BD41275ACF9F00F7BD54 /* Game.swift */; };
 		21A8BD44275AD59A00F7BD54 /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A8BD43275AD59A00F7BD54 /* GameViewModel.swift */; };
+		21A8BDB5275C03D300F7BD54 /* MockURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A8BDB4275C03D300F7BD54 /* MockURLSession.swift */; };
 		21E0568927572B6600AA01A7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E0568827572B6600AA01A7 /* AppDelegate.swift */; };
 		21E0568B27572B6600AA01A7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E0568A27572B6600AA01A7 /* SceneDelegate.swift */; };
 		21E0568D27572B6600AA01A7 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E0568C27572B6600AA01A7 /* MainViewController.swift */; };
@@ -67,6 +68,7 @@
 		21A8BD3F2759F5CB00F7BD54 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		21A8BD41275ACF9F00F7BD54 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		21A8BD43275AD59A00F7BD54 /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
+		21A8BDB4275C03D300F7BD54 /* MockURLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLSession.swift; sourceTree = "<group>"; };
 		21E0568527572B6600AA01A7 /* TheGameApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheGameApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		21E0568827572B6600AA01A7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		21E0568A27572B6600AA01A7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -237,6 +239,7 @@
 			isa = PBXGroup;
 			children = (
 				21E0569F27572B6800AA01A7 /* TheGameAppTests.swift */,
+				21A8BDB4275C03D300F7BD54 /* MockURLSession.swift */,
 			);
 			path = TheGameAppTests;
 			sourceTree = "<group>";
@@ -278,7 +281,6 @@
 				97F552C6C785C33CEEDA0129 /* Pods-TheGameAppTests.debug.xcconfig */,
 				20344977BD6BA99C9ADFE49E /* Pods-TheGameAppTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -545,6 +547,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				21A8BDB5275C03D300F7BD54 /* MockURLSession.swift in Sources */,
 				21E056A027572B6800AA01A7 /* TheGameAppTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

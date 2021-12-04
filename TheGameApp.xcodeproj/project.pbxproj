@@ -192,9 +192,17 @@
 			path = GameManager;
 			sourceTree = "<group>";
 		};
+		21A8BDB7275C0E8B00F7BD54 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
 		21E0567C27572B6600AA01A7 = {
 			isa = PBXGroup;
 			children = (
+				21A8BDB7275C0E8B00F7BD54 /* Images */,
 				21A8BD3F2759F5CB00F7BD54 /* README.md */,
 				21E0568727572B6600AA01A7 /* TheGameApp */,
 				21E0569E27572B6800AA01A7 /* TheGameAppTests */,

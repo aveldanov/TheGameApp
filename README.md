@@ -70,3 +70,14 @@ Orange dots show the number of digits guess but the position is not correct. The
 
 
 ### The Game Flowchart Diagram
+
+
+<p float="left">
+<img src="Images/image1.png" alt="drawing" width="200"/>
+&nbsp
+<img src="Images/image2.png" alt="drawing" width="200"/>
+&nbsp
+<img src="Images/image3.png" alt="drawing" width="200"/>
+&nbsp
+<img src="Images/image4.png" alt="drawing" width="200"/>
+</p>

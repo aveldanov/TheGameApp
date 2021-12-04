@@ -52,7 +52,7 @@ class MainViewController: UIViewController, SettingsViewControllerDelegate {
         settingsVC.toggleStateShared()
        
         
-        resetButtonOutlet.showsTouchWhenHighlighted = true
+//        resetButtonOutlet.showsTouchWhenHighlighted = true
         
         fetchNewPattern()
     }

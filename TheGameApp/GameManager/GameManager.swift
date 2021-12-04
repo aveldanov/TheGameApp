@@ -156,8 +156,6 @@ class GameManager{
         ]
         gameResult = Game(ongoingGame: true, winner: false, pattern: [1,2,3,4])
         
-        
-        
         return lines
     }
 }

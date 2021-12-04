@@ -36,38 +36,53 @@
 //
 //
 //print([exact, close-exact])
+//
+//
+//
+//
+//var lines : [Int] = [
+//    1,2,3,4
+//]
+//
+//var count = 0
+//
+//func running()->[Int]{
+//    lines[count] = 0
+//    count+=1
+//    return lines
+//
+//}
+//
+//running()
+//running()
+//running()
+//
+//print(lines)
+//
+//
+//func reset()->[Int]{
+//    count = 0
+//    lines = [1,2,3,4]
+//    return lines
+//}
+//
+//reset()
+////running()
+//
+//
+//print(lines)
+//
 
 
+let arr = [1,2,3,4]
 
+var circles = ["🟠","⚫️","⚪️","🟣","🟢","🔵","🟡","🔴"]
+var circlesLoaded = [String]()
 
-var lines : [Int] = [
-    1,2,3,4
-]
-
-var count = 0
-
-func running()->[Int]{
-    lines[count] = 0
-    count+=1
-    return lines
+for i in arr{
+    
+    circlesLoaded.append(circles[i])
     
 }
 
-running()
-running()
-running()
-
-print(lines)
-
-
-func reset()->[Int]{
-    count = 0
-    lines = [1,2,3,4]
-    return lines
-}
-
-reset()
-//running()
-
-
-print(lines)
+print(circlesLoaded)

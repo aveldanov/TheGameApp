@@ -12,15 +12,18 @@ import UIKit
 //    func refreshViewModel()
 //}
 
-class LineTableViewCell: UITableViewCell {
+class LineTableViewCell: UITableViewCell, SettingsViewControllerDelegate {
 
-   private let imageSet = [ #imageLiteral(resourceName: "0"), #imageLiteral(resourceName: "1"), #imageLiteral(resourceName: "2"), #imageLiteral(resourceName: "3"), #imageLiteral(resourceName: "4"), #imageLiteral(resourceName: "5"), #imageLiteral(resourceName: "6"), #imageLiteral(resourceName: "7"), #imageLiteral(resourceName: "dash")]
+    private var imageSet = [UIImage]()
+
+//   private let imageSet = [ #imageLiteral(resourceName: "0"), #imageLiteral(resourceName: "1"), #imageLiteral(resourceName: "2"), #imageLiteral(resourceName: "3"), #imageLiteral(resourceName: "4"), #imageLiteral(resourceName: "5"), #imageLiteral(resourceName: "6"), #imageLiteral(resourceName: "7"), #imageLiteral(resourceName: "dash")]
     
-   private let imageSet1 = [ #imageLiteral(resourceName: "orange"), #imageLiteral(resourceName: "black"), #imageLiteral(resourceName: "white"), #imageLiteral(resourceName: "purple"), #imageLiteral(resourceName: "green"), #imageLiteral(resourceName: "blue"), #imageLiteral(resourceName: "yellow"), #imageLiteral(resourceName: "red"), #imageLiteral(resourceName: "dash")]
+//   private let imageSet1 = [ #imageLiteral(resourceName: "orange"), #imageLiteral(resourceName: "black"), #imageLiteral(resourceName: "white"), #imageLiteral(resourceName: "purple"), #imageLiteral(resourceName: "green"), #imageLiteral(resourceName: "blue"), #imageLiteral(resourceName: "yellow"), #imageLiteral(resourceName: "red"), #imageLiteral(resourceName: "dash")]
     
     
     let checkLabels = ["⚪️","⚫️","⭕️"]
-    
+    var settingsVC = SettingsViewController()
+
 
     @IBOutlet var imageLineCollection: [UIImageView]!
     @IBOutlet weak var checkButtonOutlet: UIButton!
@@ -44,6 +47,8 @@ class LineTableViewCell: UITableViewCell {
         super.awakeFromNib()
         checkButtonOutlet.isHidden = true
         checkButtonOutlet.tintColor = .orange
+        settingsVC.delegate = self
+        settingsVC.toggleStateShared()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -51,19 +56,15 @@ class LineTableViewCell: UITableViewCell {
     }
 
     
-//    func configureLine(with model: Line){
-//        imageLineCollection[0].image = imageSet[model.arr[0]]
-//        imageLineCollection[1].image = imageSet[model.arr[1]]
-//        imageLineCollection[2].image = imageSet[model.arr[2]]
-//        imageLineCollection[3].image = imageSet[model.arr[3]]
-//        checkLabelCollection[0].text = model.verifyArr[0]
-//        checkLabelCollection[1].text = model.verifyArr[1]
-//        checkLabelCollection[2].text = model.verifyArr[2]
-//        checkLabelCollection[3].text = model.verifyArr[3]
-//        
-//        checkButtonOutlet.isHidden = model.buttonCheck
-//        
-//    }
+    func toggleStateData(_ index: Int) {
+        
+        if index == 0{
+            imageSet = [ #imageLiteral(resourceName: "0"), #imageLiteral(resourceName: "1"), #imageLiteral(resourceName: "2"), #imageLiteral(resourceName: "3"), #imageLiteral(resourceName: "4"), #imageLiteral(resourceName: "5"), #imageLiteral(resourceName: "6"), #imageLiteral(resourceName: "7"), #imageLiteral(resourceName: "dash")]
+        }else{
+            imageSet = [ #imageLiteral(resourceName: "orange"), #imageLiteral(resourceName: "black"), #imageLiteral(resourceName: "white"), #imageLiteral(resourceName: "purple"), #imageLiteral(resourceName: "green"), #imageLiteral(resourceName: "blue"), #imageLiteral(resourceName: "yellow"), #imageLiteral(resourceName: "red"), #imageLiteral(resourceName: "dash")]
+        }
+    }
+    
     
     
     func configure(){

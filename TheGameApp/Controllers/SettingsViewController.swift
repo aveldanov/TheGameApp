@@ -7,23 +7,42 @@
 
 import UIKit
 
+
+
+protocol SettingsViewControllerDelegate: AnyObject{
+    
+    func toggleStateData(_ index:Int)
+}
+
+var toggleState = 0
+
 class SettingsViewController: UIViewController {
 
+    
+    @IBOutlet weak var toggleOutlet: UISegmentedControl!
+    weak var delegate: SettingsViewControllerDelegate?
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        toggleOutlet.selectedSegmentIndex = toggleState
     }
-    */
+    
+    @IBAction func toggleStateTapped(_ sender: UISegmentedControl) {
+        toggleState = sender.selectedSegmentIndex
+    }
+    
+    
+    
+    func toggleStateShared(){
+        delegate?.toggleStateData(toggleState)
+    }
+    
 
 }

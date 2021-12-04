@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4pN-wX-bul">
-                                <rect key="frame" x="81" y="619" width="252" height="84"/>
+                                <rect key="frame" x="81" y="640" width="252" height="84"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="settings_small"/>
                                 <connections>
@@ -25,7 +25,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cjk-Kv-cCT">
-                                <rect key="frame" x="129.5" y="535" width="155" height="84"/>
+                                <rect key="frame" x="129.5" y="556" width="155" height="84"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="play_small"/>
                                 <connections>
@@ -33,7 +33,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🟠   Enjoy! - Anton Veldanov 2021   🟠 " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uxb-Sf-8Rg" customClass="CLTypingLabel" customModule="CLTypingLabel">
-                                <rect key="frame" x="49" y="803" width="316.5" height="21"/>
+                                <rect key="frame" x="207" y="824" width="0.0" height="0.0"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -49,7 +49,7 @@
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="3DU-Yy-MdK"/>
-                        <color key="backgroundColor" red="0.23921757939999999" green="0.23921233419999999" blue="0.23921591040000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="0.023529411764705882" green="0.27450980392156865" blue="0.20784313725490194" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="cjk-Kv-cCT" firstAttribute="centerX" secondItem="glE-fg-gQd" secondAttribute="centerX" id="5dV-xu-Lw3"/>
                             <constraint firstAttribute="bottom" secondItem="v3v-RR-7NF" secondAttribute="bottom" id="7zA-PU-qIh"/>
@@ -355,26 +355,49 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Zye-Ri-RkN">
-                                <rect key="frame" x="225" y="121" width="151" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <segments>
-                                    <segment title="Numbers"/>
-                                    <segment title="Circles"/>
-                                </segments>
-                            </segmentedControl>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Game Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZKJ-IC-gfF">
-                                <rect key="frame" x="87" y="126" width="87" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="51" translatesAutoresizingMaskIntoConstraints="NO" id="38h-Ai-Ioe">
+                                <rect key="frame" x="10" y="128" width="394" height="31"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Game Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZKJ-IC-gfF">
+                                        <rect key="frame" x="0.0" y="0.0" width="101.5" height="31"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Zye-Ri-RkN">
+                                        <rect key="frame" x="152.5" y="0.0" width="241.5" height="32"/>
+                                        <segments>
+                                            <segment title="Numbers"/>
+                                            <segment title="Circles"/>
+                                        </segments>
+                                        <connections>
+                                            <action selector="toggleStateTapped:" destination="h6O-U7-VSv" eventType="valueChanged" id="NMU-GZ-VVA"/>
+                                        </connections>
+                                    </segmentedControl>
+                                </subviews>
+                            </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background-Bubbles" translatesAutoresizingMaskIntoConstraints="NO" id="tUN-Y7-xRt">
+                                <rect key="frame" x="0.0" y="776" width="414" height="120"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="ghq-LL-h7a"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="1cJ-Mb-dnZ"/>
-                        <color key="backgroundColor" systemColor="systemYellowColor"/>
+                        <color key="backgroundColor" red="0.94117647058823528" green="0.73333333333333328" blue="0.38431372549019605" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="1cJ-Mb-dnZ" firstAttribute="trailing" secondItem="38h-Ai-Ioe" secondAttribute="trailing" constant="10" id="J1b-NQ-pgu"/>
+                            <constraint firstItem="38h-Ai-Ioe" firstAttribute="leading" secondItem="1cJ-Mb-dnZ" secondAttribute="leading" constant="10" id="LOx-59-Vne"/>
+                            <constraint firstItem="1cJ-Mb-dnZ" firstAttribute="trailing" secondItem="tUN-Y7-xRt" secondAttribute="trailing" id="UI9-h7-68r"/>
+                            <constraint firstAttribute="bottom" secondItem="tUN-Y7-xRt" secondAttribute="bottom" id="n5j-F5-hQI"/>
+                            <constraint firstItem="38h-Ai-Ioe" firstAttribute="top" secondItem="1cJ-Mb-dnZ" secondAttribute="top" constant="40" id="uGL-ep-kSi"/>
+                            <constraint firstItem="tUN-Y7-xRt" firstAttribute="leading" secondItem="1cJ-Mb-dnZ" secondAttribute="leading" id="zlt-Iv-gDh"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Npl-lD-F9w"/>
+                    <connections>
+                        <outlet property="toggleOutlet" destination="Zye-Ri-RkN" id="SoO-oE-mOV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ao2-X2-ZcO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -399,6 +422,9 @@
             <point key="canvasLocation" x="-1084.0579710144928" y="280.58035714285711"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="Uxb-Sf-8Rg"/>
+    </designables>
     <resources>
         <image name="0" width="60" height="60"/>
         <image name="0input" width="60" height="60"/>
@@ -416,9 +442,6 @@
         <image name="settings_small" width="228" height="70"/>
         <systemColor name="systemOrangeColor">
             <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemYellowColor">
-            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

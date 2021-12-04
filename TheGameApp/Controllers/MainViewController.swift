@@ -22,6 +22,8 @@ class MainViewController: UIViewController {
     @IBOutlet weak var resetButtonOutlet: BounceButton!
     @IBOutlet var inputButtons: [BounceButton]!
     
+
+    var imageSetButtons = [ #imageLiteral(resourceName: "orange"), #imageLiteral(resourceName: "black"), #imageLiteral(resourceName: "white"), #imageLiteral(resourceName: "purple"), #imageLiteral(resourceName: "green"), #imageLiteral(resourceName: "blue"), #imageLiteral(resourceName: "yellow"), #imageLiteral(resourceName: "red")]
     var lines: [Line]?
     var verifyButtonState = false
     
@@ -38,11 +40,17 @@ class MainViewController: UIViewController {
         
         resetButtonOutlet.showsTouchWhenHighlighted = true
         
-        
         fetchNewPattern()
         
-
-        
+        setButtonImage()
+    }
+    
+    
+    
+    func setButtonImage(){
+        for i in 0..<inputButtons.count{
+            inputButtons[i].setImage(imageSetButtons[i], for: .normal)
+        }
     }
     
     
@@ -65,7 +73,6 @@ class MainViewController: UIViewController {
                 break
             }
         }
-        
     }
     
     

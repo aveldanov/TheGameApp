@@ -34,7 +34,7 @@ class GameManager{
         Line(arr: [8,8,8,8], verifyArr: ["🟠","🟠","🟠","🟠"], pattern: [1,2,3,4]),
         Line(arr: [8,8,8,8], verifyArr: ["🟠","🟠","🟠","🟠"], pattern: [1,2,3,4]),
         Line(arr: [8,8,8,8], verifyArr: ["🟠","🟠","🟠","🟠"], pattern: [1,2,3,4]),
-        Line(arr: [8,8,8,8], verifyArr: ["⚪️","⚫️","⭕️","⭕️"], pattern: [1,2,3,4])
+        Line(arr: [8,8,8,8], verifyArr: ["🟠","🟠","🟠","🟠"], pattern: [1,2,3,4])
     ]
 
 
@@ -152,7 +152,7 @@ class GameManager{
             Line(arr: [8,8,8,8], verifyArr: ["🟠","🟠","🟠","🟠"], pattern: [1,2,3,4]),
             Line(arr: [8,8,8,8], verifyArr: ["🟠","🟠","🟠","🟠"], pattern: [1,2,3,4]),
             Line(arr: [8,8,8,8], verifyArr: ["🟠","🟠","🟠","🟠"], pattern: [1,2,3,4]),
-            Line(arr: [8,8,8,8], verifyArr: ["⚪️","⚫️","⭕️","⭕️"], pattern: [1,2,3,4])
+            Line(arr: [8,8,8,8], verifyArr: ["🟠","🟠","🟠","🟠"], pattern: [1,2,3,4])
         ]
         gameResult = Game(ongoingGame: true, winner: false, pattern: [1,2,3,4])
         

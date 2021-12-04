@@ -26,10 +26,7 @@ struct LineViewModel{
         return lines[row].verifyArr
     }
     
-    
-    var isButtonCheck: Bool{
-        return lines[row].buttonCheck
-    }
+ 
     
     
 }

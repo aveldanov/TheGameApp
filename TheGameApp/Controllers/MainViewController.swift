@@ -26,6 +26,7 @@ class MainViewController: UIViewController {
     var lines: [Line]?
     var verifyButtonState = false
     
+    var loadedPattern = [Int]()
     var viewModel: GameViewModel?{
         didSet{
             print("GAME")
@@ -46,7 +47,12 @@ class MainViewController: UIViewController {
         
         
         APICaller.shared.fetchData(url) { result in
-            print(result)
+            switch result{
+            case .success(let items):
+                self.loadedPattern = items
+            case .failure(_):
+                break
+            }
         }
     }
     
@@ -70,7 +76,7 @@ class MainViewController: UIViewController {
         
         let number = sender.tag
         let result = GameManager.shared.running(number, verifyButtonState)
-        
+        print(result)
         lines = result.0
         
         if result.1.winner{

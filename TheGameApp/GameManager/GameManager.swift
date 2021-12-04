@@ -15,26 +15,23 @@ protocol GameManagerDelegate: AnyObject{
 
 
 class GameManager{
-    
-    
-        
-    var delegate: GameManagerDelegate?
+
     
     // combination
     // user input
     
     
     var lines : [Line] = [
-        Line(arr: [8,8,8,8], verifyArr: ["🟠","🟠","🟠","🟠"], buttonCheck: false),
-        Line(arr: [8,8,8,8], verifyArr: ["🟠","🟠","🟠","🟠"], buttonCheck: false),
-        Line(arr: [8,8,8,8], verifyArr: ["🟠","🟠","🟠","🟠"], buttonCheck: false),
-        Line(arr: [8,8,8,8], verifyArr: ["🟠","🟠","🟠","🟠"], buttonCheck: false),
-        Line(arr: [8,8,8,8], verifyArr: ["🟠","🟠","🟠","🟠"], buttonCheck: false),
-        Line(arr: [8,8,8,8], verifyArr: ["🟠","🟠","🟠","🟠"], buttonCheck: false),
-        Line(arr: [8,8,8,8], verifyArr: ["🟠","🟠","🟠","🟠"], buttonCheck: false),
-        Line(arr: [8,8,8,8], verifyArr: ["🟠","🟠","🟠","🟠"], buttonCheck: false),
-        Line(arr: [8,8,8,8], verifyArr: ["🟠","🟠","🟠","🟠"], buttonCheck: false),
-        Line(arr: [8,8,8,8], verifyArr: ["⚪️","⚫️","⭕️","⭕️"], buttonCheck: false)
+        Line(arr: [8,8,8,8], verifyArr: ["🟠","🟠","🟠","🟠"], pattern: [1,2,3,4]),
+        Line(arr: [8,8,8,8], verifyArr: ["🟠","🟠","🟠","🟠"], pattern: [1,2,3,4]),
+        Line(arr: [8,8,8,8], verifyArr: ["🟠","🟠","🟠","🟠"], pattern: [1,2,3,4]),
+        Line(arr: [8,8,8,8], verifyArr: ["🟠","🟠","🟠","🟠"], pattern: [1,2,3,4]),
+        Line(arr: [8,8,8,8], verifyArr: ["🟠","🟠","🟠","🟠"], pattern: [1,2,3,4]),
+        Line(arr: [8,8,8,8], verifyArr: ["🟠","🟠","🟠","🟠"], pattern: [1,2,3,4]),
+        Line(arr: [8,8,8,8], verifyArr: ["🟠","🟠","🟠","🟠"], pattern: [1,2,3,4]),
+        Line(arr: [8,8,8,8], verifyArr: ["🟠","🟠","🟠","🟠"], pattern: [1,2,3,4]),
+        Line(arr: [8,8,8,8], verifyArr: ["🟠","🟠","🟠","🟠"], pattern: [1,2,3,4]),
+        Line(arr: [8,8,8,8], verifyArr: ["⚪️","⚫️","⭕️","⭕️"], pattern: [1,2,3,4])
     ]
     
     
@@ -67,7 +64,7 @@ class GameManager{
         if inputArr.count == 4{
             
             //            lines[row].verifyArr = ["⚪️","⚫️","⭕️","⭕️"]
-            let result = patternMatch(inputArr, pattern)
+            let result = patternMatch(inputArr, lines[0].pattern)
             for _ in 0..<result[0]{
                 buttons.append("⚫️")
             }
@@ -133,17 +130,18 @@ class GameManager{
         exact = 0
         inputArr = []
         lines = [
-            Line(arr: [8,8,8,8], verifyArr: ["🟠","🟠","🟠","🟠"], buttonCheck: false),
-            Line(arr: [8,8,8,8], verifyArr: ["🟠","🟠","🟠","🟠"], buttonCheck: false),
-            Line(arr: [8,8,8,8], verifyArr: ["🟠","🟠","🟠","🟠"], buttonCheck: false),
-            Line(arr: [8,8,8,8], verifyArr: ["🟠","🟠","🟠","🟠"], buttonCheck: false),
-            Line(arr: [8,8,8,8], verifyArr: ["🟠","🟠","🟠","🟠"], buttonCheck: false),
-            Line(arr: [8,8,8,8], verifyArr: ["🟠","🟠","🟠","🟠"], buttonCheck: false),
-            Line(arr: [8,8,8,8], verifyArr: ["🟠","🟠","🟠","🟠"], buttonCheck: false),
-            Line(arr: [8,8,8,8], verifyArr: ["🟠","🟠","🟠","🟠"], buttonCheck: false),
-            Line(arr: [8,8,8,8], verifyArr: ["🟠","🟠","🟠","🟠"], buttonCheck: false),
-            Line(arr: [8,8,8,8], verifyArr: ["⚪️","⚫️","⭕️","⭕️"], buttonCheck: false)
+            Line(arr: [8,8,8,8], verifyArr: ["🟠","🟠","🟠","🟠"], pattern: [1,2,3,4]),
+            Line(arr: [8,8,8,8], verifyArr: ["🟠","🟠","🟠","🟠"], pattern: [1,2,3,4]),
+            Line(arr: [8,8,8,8], verifyArr: ["🟠","🟠","🟠","🟠"], pattern: [1,2,3,4]),
+            Line(arr: [8,8,8,8], verifyArr: ["🟠","🟠","🟠","🟠"], pattern: [1,2,3,4]),
+            Line(arr: [8,8,8,8], verifyArr: ["🟠","🟠","🟠","🟠"], pattern: [1,2,3,4]),
+            Line(arr: [8,8,8,8], verifyArr: ["🟠","🟠","🟠","🟠"], pattern: [1,2,3,4]),
+            Line(arr: [8,8,8,8], verifyArr: ["🟠","🟠","🟠","🟠"], pattern: [1,2,3,4]),
+            Line(arr: [8,8,8,8], verifyArr: ["🟠","🟠","🟠","🟠"], pattern: [1,2,3,4]),
+            Line(arr: [8,8,8,8], verifyArr: ["🟠","🟠","🟠","🟠"], pattern: [1,2,3,4]),
+            Line(arr: [8,8,8,8], verifyArr: ["⚪️","⚫️","⭕️","⭕️"], pattern: [1,2,3,4])
         ]
+        gameResult = Game(ongoingGame: true, winner: false)
         return lines
     }
 }

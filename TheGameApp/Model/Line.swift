@@ -10,10 +10,8 @@ import Foundation
 
 
 struct Line{
-   
     var arr: [Int]
     var verifyArr: [String]
-//    var buttonCheck: Bool
     var pattern: [Int]
 }
 

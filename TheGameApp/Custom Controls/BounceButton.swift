@@ -19,7 +19,5 @@ class BounceButton: UIButton{
             self.transform = CGAffineTransform.identity
         }, completion: nil)        
         super.touchesBegan(touches, with: event)
-    }
-    
-    
+    }    
 }

@@ -11,13 +11,11 @@ import Foundation
 struct LineViewModel{
     
     let lines: [Line]
-    
     var numberOfRowsInSection: Int{
         return lines.count
     }
     
     var row: Int
-    
     var arrNumbersVM: [Int]{
         return lines[row].arr
     }
@@ -25,8 +23,4 @@ struct LineViewModel{
     var verifyArrVM: [String]{
         return lines[row].verifyArr
     }
-    
- 
-    
-    
 }

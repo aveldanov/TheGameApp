@@ -61,7 +61,7 @@ class TheGameAppTests: XCTestCase {
             
             switch result{
             case .success(let items):
-                XCTAssertEqual(4, items.count)
+                XCTAssertEqual([1,2,3,4], items)
                 expectation.fulfill()
             case .failure(_):
                 break

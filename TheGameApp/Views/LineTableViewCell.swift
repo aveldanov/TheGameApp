@@ -32,7 +32,6 @@ class LineTableViewCell: UITableViewCell {
 //            print("BOOOOOOOOm")
             configure()
         }
-        
     }
     
     

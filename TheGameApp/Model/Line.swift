@@ -16,3 +16,4 @@ struct Line{
     var buttonCheck: Bool
     
 }
+

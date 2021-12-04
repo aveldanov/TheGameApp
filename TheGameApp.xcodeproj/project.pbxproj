@@ -21,6 +21,10 @@
 		21A8BD42275ACF9F00F7BD54 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A8BD41275ACF9F00F7BD54 /* Game.swift */; };
 		21A8BD44275AD59A00F7BD54 /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A8BD43275AD59A00F7BD54 /* GameViewModel.swift */; };
 		21A8BDB5275C03D300F7BD54 /* MockURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A8BDB4275C03D300F7BD54 /* MockURLSession.swift */; };
+		21A8BDBC275C0FE200F7BD54 /* image2.png in Resources */ = {isa = PBXBuildFile; fileRef = 21A8BDB8275C0FE100F7BD54 /* image2.png */; };
+		21A8BDBD275C0FE200F7BD54 /* image3.png in Resources */ = {isa = PBXBuildFile; fileRef = 21A8BDB9275C0FE100F7BD54 /* image3.png */; };
+		21A8BDBE275C0FE200F7BD54 /* image1.png in Resources */ = {isa = PBXBuildFile; fileRef = 21A8BDBA275C0FE100F7BD54 /* image1.png */; };
+		21A8BDBF275C0FE200F7BD54 /* image4.png in Resources */ = {isa = PBXBuildFile; fileRef = 21A8BDBB275C0FE100F7BD54 /* image4.png */; };
 		21E0568927572B6600AA01A7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E0568827572B6600AA01A7 /* AppDelegate.swift */; };
 		21E0568B27572B6600AA01A7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E0568A27572B6600AA01A7 /* SceneDelegate.swift */; };
 		21E0568D27572B6600AA01A7 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E0568C27572B6600AA01A7 /* MainViewController.swift */; };
@@ -69,6 +73,10 @@
 		21A8BD41275ACF9F00F7BD54 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		21A8BD43275AD59A00F7BD54 /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
 		21A8BDB4275C03D300F7BD54 /* MockURLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLSession.swift; sourceTree = "<group>"; };
+		21A8BDB8275C0FE100F7BD54 /* image2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image2.png; sourceTree = "<group>"; };
+		21A8BDB9275C0FE100F7BD54 /* image3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image3.png; sourceTree = "<group>"; };
+		21A8BDBA275C0FE100F7BD54 /* image1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image1.png; sourceTree = "<group>"; };
+		21A8BDBB275C0FE100F7BD54 /* image4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image4.png; sourceTree = "<group>"; };
 		21E0568527572B6600AA01A7 /* TheGameApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheGameApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		21E0568827572B6600AA01A7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		21E0568A27572B6600AA01A7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -195,6 +203,10 @@
 		21A8BDB7275C0E8B00F7BD54 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				21A8BDBA275C0FE100F7BD54 /* image1.png */,
+				21A8BDB8275C0FE100F7BD54 /* image2.png */,
+				21A8BDB9275C0FE100F7BD54 /* image3.png */,
+				21A8BDBB275C0FE100F7BD54 /* image4.png */,
 			);
 			path = Images;
 			sourceTree = "<group>";
@@ -401,10 +413,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				21A8BDBF275C0FE200F7BD54 /* image4.png in Resources */,
 				21E0569527572B6700AA01A7 /* LaunchScreen.storyboard in Resources */,
+				21A8BDBE275C0FE200F7BD54 /* image1.png in Resources */,
 				21A8BCEE27575CAB00F7BD54 /* LineTableViewCell.xib in Resources */,
+				21A8BDBC275C0FE200F7BD54 /* image2.png in Resources */,
 				21A8BD402759F5CB00F7BD54 /* README.md in Resources */,
 				21E0569227572B6700AA01A7 /* Assets.xcassets in Resources */,
+				21A8BDBD275C0FE200F7BD54 /* image3.png in Resources */,
 				21E0569027572B6600AA01A7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

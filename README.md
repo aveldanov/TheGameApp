@@ -69,7 +69,7 @@ Orange dots show the number of digits guess but the position is not correct. The
 
 
 
-### The Game Flowchart Diagram
+### The Game App Screenshots
 
 
 <p float="left">

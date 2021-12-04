@@ -10,11 +10,12 @@ import Foundation
 
 class GameManager{
 
+    var vc = MainViewController()
+    let urlString = Constants.urlString
     
-    // combination
-    // user input
     
-    var pattern = MainViewController().loadedPattern
+//    var pattern = [1,2,3,5]
+
     
     var lines : [Line] = [
         Line(arr: [8,8,8,8], verifyArr: ["🟠","🟠","🟠","🟠"], pattern: [1,2,3,4]),
@@ -28,7 +29,12 @@ class GameManager{
         Line(arr: [8,8,8,8], verifyArr: ["🟠","🟠","🟠","🟠"], pattern: [1,2,3,4]),
         Line(arr: [8,8,8,8], verifyArr: ["⚪️","⚫️","⭕️","⭕️"], pattern: [1,2,3,4])
     ]
-    
+
+
+    // combination
+
+    // user input
+   
     
     
     var close = 0
@@ -37,17 +43,16 @@ class GameManager{
     static let shared = GameManager()
     var row = 0
     var position = 0
-//    var pattern = [1,2,3,4]
     var buttons:[String] = []
-    var gameResult = Game(ongoingGame: true, winner: false)
+    var gameResult = Game(ongoingGame: true, winner: false, pattern: [1,2,3,4])
     
     
     
     func running(_ input:Int?, _ verify: Bool)->([Line],Game){
         // 1234
         // 4563
+
         
-        print("LJFLWJELKCJLKASDJCLKJ")
         guard let input = input else {
             return (lines,gameResult)
         }
@@ -61,6 +66,7 @@ class GameManager{
             
             //            lines[row].verifyArr = ["⚪️","⚫️","⭕️","⭕️"]
             let result = patternMatch(inputArr, lines[0].pattern)
+            print(lines[0].pattern,"BOOM")
             for _ in 0..<result[0]{
                 buttons.append("⚫️")
             }
@@ -74,7 +80,7 @@ class GameManager{
             }
             
             if result[0] == 4{
-                gameResult = Game(ongoingGame: false, winner: true)
+                gameResult = Game(ongoingGame: false, winner: true,pattern: [1,2,3,4])
             }
             
             lines[row].verifyArr = buttons
@@ -86,7 +92,7 @@ class GameManager{
         }
         
         if row == 3{
-            gameResult = Game(ongoingGame: false, winner: false)
+            gameResult = Game(ongoingGame: false, winner: false, pattern: [1,2,3,4])
         }
         
         return (lines,gameResult)
@@ -119,7 +125,8 @@ class GameManager{
     
 
     func reset()->[Line]{
-
+        
+//        print(fetchPattern(),"PPPPPPP", lines[0].pattern)
         buttons = []
         row = 0
         position = 0
@@ -138,7 +145,10 @@ class GameManager{
             Line(arr: [8,8,8,8], verifyArr: ["🟠","🟠","🟠","🟠"], pattern: [1,2,3,4]),
             Line(arr: [8,8,8,8], verifyArr: ["⚪️","⚫️","⭕️","⭕️"], pattern: [1,2,3,4])
         ]
-        gameResult = Game(ongoingGame: true, winner: false)
+        gameResult = Game(ongoingGame: true, winner: false, pattern: [1,2,3,4])
+        
+        
+        
         return lines
     }
 }

@@ -10,7 +10,7 @@ import Foundation
 
 struct LineViewModel{
     
-    let lines: [Line]
+    var lines: [Line]
     var numberOfRowsInSection: Int{
         return lines.count
     }
@@ -22,5 +22,9 @@ struct LineViewModel{
     
     var verifyArrVM: [String]{
         return lines[row].verifyArr
+    }
+    
+    var pattern: [Int]{
+        return lines[0].pattern
     }
 }

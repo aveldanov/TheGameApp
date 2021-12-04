@@ -16,5 +16,9 @@ struct GameViewModel{
     var ongoing: Bool{
         return game.ongoingGame
     }
+    
+    var pattern: [Int]{
+        return game.pattern
+    }
 }
 

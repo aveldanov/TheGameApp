@@ -28,11 +28,6 @@ class MainViewController: UIViewController {
     
     
     var loadedPattern = [Int]()
-    var viewModel: GameViewModel?{
-        didSet{
-            print("GAME")
-        }
-    }
     
     
     override func viewDidLoad() {
@@ -45,14 +40,19 @@ class MainViewController: UIViewController {
         resetButtonOutlet.showsTouchWhenHighlighted = true
         let url = URL(string: urlString)!
         
+        
+        
+        
         APICaller.shared.fetchData(url) { result in
             switch result{
             case .success(let items):
                 self.loadedPattern = items
+                print(self.loadedPattern)
             case .failure(_):
                 break
             }
         }
+        
     }
     
     
@@ -60,7 +60,6 @@ class MainViewController: UIViewController {
     
     @IBAction func resetButtonTapped(_ sender: UIButton) {
         print("reset")
-        
         lines = GameManager.shared.reset()
         DispatchQueue.main.async {
             self.tableView.reloadData()
@@ -72,9 +71,7 @@ class MainViewController: UIViewController {
         
         let number = sender.tag
         let result = GameManager.shared.running(number, verifyButtonState)
-//        print(result)
         lines = result.0
-        
         if result.1.winner{
             print("WIIIIIIIIIINER")
             showWinnerAlert()
@@ -82,7 +79,6 @@ class MainViewController: UIViewController {
             print("LOOOOOSER")
             showLooserAlert()
         }
-        
         
         DispatchQueue.main.async {
             self.tableView.reloadData()
@@ -105,7 +101,7 @@ extension MainViewController{
     }
     
     func showLooserAlert(){
-        let alert = UIAlertController(title: "Loser", message: "Combination was\(lines![0].pattern)])", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Loser", message: "Combination was", preferredStyle: .alert)
         let action = UIAlertAction(title: "Dismiss", style: .cancel) { action in
             print("TAPPED DISMISS")
         }
@@ -131,12 +127,9 @@ extension MainViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! LineTableViewCell
-        
         cell.backgroundColor = .clear
-        
-//        let model = lines[indexPath.row]
-//        print("LINES", lines)
         lines = GameManager.shared.lines
+        
         cell.viewModel = LineViewModel(lines: lines!, row: indexPath.row)
         
         return cell

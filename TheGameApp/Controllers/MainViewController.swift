@@ -26,6 +26,7 @@ class MainViewController: UIViewController {
     var lines: [Line]?
     var verifyButtonState = false
     
+    
     var loadedPattern = [Int]()
     var viewModel: GameViewModel?{
         didSet{
@@ -41,10 +42,8 @@ class MainViewController: UIViewController {
         tableView.isScrollEnabled = false
         tableView.rowHeight = 60
         
-        
         resetButtonOutlet.showsTouchWhenHighlighted = true
         let url = URL(string: urlString)!
-        
         
         APICaller.shared.fetchData(url) { result in
             switch result{
@@ -60,7 +59,6 @@ class MainViewController: UIViewController {
     
     
     @IBAction func resetButtonTapped(_ sender: UIButton) {
-        
         print("reset")
         
         lines = GameManager.shared.reset()
@@ -71,12 +69,10 @@ class MainViewController: UIViewController {
     
     
     @IBAction func inputButtonTapped(_ sender: UIButton) {
-//        print("Input",sender.tag)
-        
         
         let number = sender.tag
         let result = GameManager.shared.running(number, verifyButtonState)
-        print(result)
+//        print(result)
         lines = result.0
         
         if result.1.winner{
@@ -141,7 +137,6 @@ extension MainViewController: UITableViewDataSource{
 //        let model = lines[indexPath.row]
 //        print("LINES", lines)
         lines = GameManager.shared.lines
-      
         cell.viewModel = LineViewModel(lines: lines!, row: indexPath.row)
         
         return cell

@@ -13,6 +13,7 @@ class GameManager{
     
     // combination
     // user input
+    
     var pattern = MainViewController().loadedPattern
     
     var lines : [Line] = [
@@ -36,7 +37,7 @@ class GameManager{
     static let shared = GameManager()
     var row = 0
     var position = 0
-    var pattern = [1,2,3,4]
+//    var pattern = [1,2,3,4]
     var buttons:[String] = []
     var gameResult = Game(ongoingGame: true, winner: false)
     
@@ -46,8 +47,7 @@ class GameManager{
         // 1234
         // 4563
         
-        print(PAAAAAATTERN)
-        
+        print("LJFLWJELKCJLKASDJCLKJ")
         guard let input = input else {
             return (lines,gameResult)
         }
@@ -119,6 +119,7 @@ class GameManager{
     
 
     func reset()->[Line]{
+
         buttons = []
         row = 0
         position = 0

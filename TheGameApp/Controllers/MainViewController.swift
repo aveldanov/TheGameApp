@@ -22,12 +22,11 @@ class MainViewController: UIViewController {
     @IBOutlet weak var resetButtonOutlet: BounceButton!
     @IBOutlet var inputButtons: [BounceButton]!
     
-    let urlString = Constants.urlString
     var lines: [Line]?
     var verifyButtonState = false
     
-    
-    var loadedPattern = [Int]()
+    var itemsLoaded = [Int]()
+
     
     
     override func viewDidLoad() {
@@ -38,16 +37,30 @@ class MainViewController: UIViewController {
         tableView.rowHeight = 60
         
         resetButtonOutlet.showsTouchWhenHighlighted = true
+        
+        
+        fetchNewPattern()
+        
+
+        
+    }
+    
+    
+    
+    
+    func fetchNewPattern(){
+        
+        let urlString = Constants.urlString
+
         let url = URL(string: urlString)!
-        
-        
-        
-        
+
         APICaller.shared.fetchData(url) { result in
             switch result{
             case .success(let items):
-                self.loadedPattern = items
-                print(self.loadedPattern)
+                self.itemsLoaded = items
+                DispatchQueue.main.async {
+                    GameManager().fetchPattern(items)
+                }
             case .failure(_):
                 break
             }
@@ -60,6 +73,7 @@ class MainViewController: UIViewController {
     
     @IBAction func resetButtonTapped(_ sender: UIButton) {
         print("reset")
+        fetchNewPattern()
         lines = GameManager.shared.reset()
         DispatchQueue.main.async {
             self.tableView.reloadData()
@@ -101,7 +115,7 @@ extension MainViewController{
     }
     
     func showLooserAlert(){
-        let alert = UIAlertController(title: "Loser", message: "Combination was", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Loser", message: "The combination was \(itemsLoaded)", preferredStyle: .alert)
         let action = UIAlertAction(title: "Dismiss", style: .cancel) { action in
             print("TAPPED DISMISS")
         }
@@ -111,6 +125,7 @@ extension MainViewController{
     }
 
 }
+
 
 
 

@@ -73,11 +73,11 @@ Orange dots show the number of digits guess but the position is not correct. The
 
 
 <p float="left">
-<img src="Images/image1.png" alt="drawing" width="200"/>
+<img src="Images/image1.png" alt="drawing" width="180"/>
 &nbsp
-<img src="Images/image2.png" alt="drawing" width="200"/>
+<img src="Images/image2.png" alt="drawing" width="180"/>
 &nbsp
-<img src="Images/image3.png" alt="drawing" width="200"/>
+<img src="Images/image3.png" alt="drawing" width="180"/>
 &nbsp
-<img src="Images/image4.png" alt="drawing" width="200"/>
+<img src="Images/image4.png" alt="drawing" width="180"/>
 </p>

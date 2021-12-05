@@ -8,12 +8,12 @@
 import UIKit
 
 
-//TODO Alert - New Game, Exit, Cancel
-//TODO Timer -
-// TODO Type-in AppNameLabel
-// TODO Back-button Warning Game Cancel
-// TODO Continue Button
-// TODO CONSTANTA!!!
+// TODO Alert - New Game, Exit, Cancel - Done
+// TODO Timer -
+// TODO Type-in AppNameLabel - Done
+// TODO Back-button Warning Game Cancel - Done
+// TODO Continue Button  - Done
+// TODO CONSTANTS!!! - Done
 
 
 

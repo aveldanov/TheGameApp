@@ -151,7 +151,7 @@ extension MainViewController{
 
     func showWinnerAlert(){
     
-        let alert = UIAlertController(title: "Winner", message: "Need to Celebrate", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Winner", message: "Need to Celebrate 🎉", preferredStyle: .alert)
         let action = UIAlertAction(title: "Dismiss", style: .cancel) { action in
             print("TAPPED DISMISS")
         }

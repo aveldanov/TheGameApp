@@ -86,7 +86,7 @@ class GameManager{
                 buttons.append("⭕️")
             }
             
-            if result[0] == 4{
+            if result[0] == Constants.rowLength{
                 gameResult = Game(ongoingGame: false, winner: true,pattern: pattern)
             }
             
@@ -98,7 +98,7 @@ class GameManager{
             inputArr = []
         }
         
-        if row == 3{
+        if row == Constants.guesses{
             gameResult = Game(ongoingGame: false, winner: false, pattern: pattern)
         }
         

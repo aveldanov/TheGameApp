@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4pN-wX-bul">
-                                <rect key="frame" x="81" y="640" width="252" height="84"/>
+                                <rect key="frame" x="81" y="619" width="252" height="84"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="settings_small"/>
                                 <connections>
@@ -25,7 +25,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cjk-Kv-cCT">
-                                <rect key="frame" x="129.5" y="556" width="155" height="84"/>
+                                <rect key="frame" x="129.5" y="535" width="155" height="84"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="play_small"/>
                                 <connections>
@@ -33,7 +33,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🟠   Enjoy! - Anton Veldanov 2021   🟠 " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uxb-Sf-8Rg" customClass="CLTypingLabel" customModule="CLTypingLabel">
-                                <rect key="frame" x="207" y="824" width="0.0" height="0.0"/>
+                                <rect key="frame" x="49" y="803" width="316.5" height="21"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -423,7 +423,9 @@
         </scene>
     </scenes>
     <designables>
-        <designable name="Uxb-Sf-8Rg"/>
+        <designable name="Uxb-Sf-8Rg">
+            <size key="intrinsicContentSize" width="316.5" height="21"/>
+        </designable>
     </designables>
     <resources>
         <image name="0" width="60" height="60"/>

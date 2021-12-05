@@ -13,6 +13,7 @@ struct GameViewModel{
     var winner: Bool{
         return game.winner
     }
+    
     var ongoing: Bool{
         return game.ongoingGame
     }

@@ -96,6 +96,7 @@ class MainViewController: UIViewController, SettingsViewControllerDelegate {
                 }
                 self.matchToNumbers(items)
             case .failure(_):
+                self.noConnectionAlert()
                 break
             }
         }
@@ -172,6 +173,20 @@ extension MainViewController{
         
         present(alert, animated: true, completion: nil)
     }
+    
+    
+    func noConnectionAlert(){
+        
+        let alert = UIAlertController(title: "No Internet", message: "Please check your connection", preferredStyle: .alert)
+        
+        let action = UIAlertAction(title: "Dismiss", style: .cancel) { alert in
+            print("[APICaller] Dismiss Tapped")
+        }
+        alert.addAction(action)
+        
+        present(alert, animated: true, completion: nil)
+    }
+    
 }
 
 

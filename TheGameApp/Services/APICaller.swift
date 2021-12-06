@@ -6,6 +6,14 @@
 //
 
 import Foundation
+import UIKit
+
+enum APICallerError: Error{
+    case urlSessionError
+}
+
+
+
 
 class APICaller{
     //https://www.random.org/integers/?num=4&min=0&max=7&col=1&base=10&format=plain&rnd=new
@@ -22,6 +30,7 @@ class APICaller{
         
         urlSession.dataTask(with: url) { data, response, error in
             guard let data = data, error == nil else {
+                completion(.failure(APICallerError.urlSessionError))
                 return
             }
             
@@ -35,4 +44,5 @@ class APICaller{
             }
         }.resume()
     }
+
 }

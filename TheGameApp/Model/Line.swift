@@ -8,9 +8,14 @@
 import Foundation
 
 
-struct Line{
+struct Line: Codable{
     var arr: [Int]
     var verifyArr: [String]
-    var pattern: [Int]
+
 }
 
+
+struct Position: Codable{
+    var row: Int
+    var position: Int
+}

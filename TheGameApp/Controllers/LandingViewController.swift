@@ -16,7 +16,7 @@ class LandingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        titleLabel.text = "🟠...Enjoy! - Anton Veldanov 2021...🟠"
+        titleLabel.text = "🟠Anton Veldanov - 2021🟠"
 
 //
 //        titleLabel.text = ""

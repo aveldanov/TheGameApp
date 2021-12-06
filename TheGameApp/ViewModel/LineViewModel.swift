@@ -24,7 +24,5 @@ struct LineViewModel{
         return lines[row].verifyArr
     }
     
-    var pattern: [Int]{
-        return lines[0].pattern
-    }
+
 }

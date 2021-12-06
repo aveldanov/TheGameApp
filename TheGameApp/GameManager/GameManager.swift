@@ -11,43 +11,32 @@ var pattern = [Int]()
 
 class GameManager{
 
+    static let shared = GameManager()
+
     var vc = MainViewController()
     
     func fetchPattern(_ items: [Int]){
         pattern = items
     }
-    
-    
-//    var pattern = [1,2,3,5]
 
-    
-    
-    
     
     var lines : [Line] = [
-        Line(arr: [8,8,8,8], verifyArr: ["🟠","🟠","🟠","🟠"], pattern: [1,2,3,4]),
-        Line(arr: [8,8,8,8], verifyArr: ["🟠","🟠","🟠","🟠"], pattern: [1,2,3,4]),
-        Line(arr: [8,8,8,8], verifyArr: ["🟠","🟠","🟠","🟠"], pattern: [1,2,3,4]),
-        Line(arr: [8,8,8,8], verifyArr: ["🟠","🟠","🟠","🟠"], pattern: [1,2,3,4]),
-        Line(arr: [8,8,8,8], verifyArr: ["🟠","🟠","🟠","🟠"], pattern: [1,2,3,4]),
-        Line(arr: [8,8,8,8], verifyArr: ["🟠","🟠","🟠","🟠"], pattern: [1,2,3,4]),
-        Line(arr: [8,8,8,8], verifyArr: ["🟠","🟠","🟠","🟠"], pattern: [1,2,3,4]),
-        Line(arr: [8,8,8,8], verifyArr: ["🟠","🟠","🟠","🟠"], pattern: [1,2,3,4]),
-        Line(arr: [8,8,8,8], verifyArr: ["🟠","🟠","🟠","🟠"], pattern: [1,2,3,4]),
-        Line(arr: [8,8,8,8], verifyArr: ["🟠","🟠","🟠","🟠"], pattern: [1,2,3,4])
+        Line(arr: [8,8,8,8], verifyArr: ["🟠","🟠","🟠","🟠"]),
+        Line(arr: [8,8,8,8], verifyArr: ["🟠","🟠","🟠","🟠"]),
+        Line(arr: [8,8,8,8], verifyArr: ["🟠","🟠","🟠","🟠"]),
+        Line(arr: [8,8,8,8], verifyArr: ["🟠","🟠","🟠","🟠"]),
+        Line(arr: [8,8,8,8], verifyArr: ["🟠","🟠","🟠","🟠"]),
+        Line(arr: [8,8,8,8], verifyArr: ["🟠","🟠","🟠","🟠"]),
+        Line(arr: [8,8,8,8], verifyArr: ["🟠","🟠","🟠","🟠"]),
+        Line(arr: [8,8,8,8], verifyArr: ["🟠","🟠","🟠","🟠"]),
+        Line(arr: [8,8,8,8], verifyArr: ["🟠","🟠","🟠","🟠"]),
+        Line(arr: [8,8,8,8], verifyArr: ["🟠","🟠","🟠","🟠"])
     ]
 
-
-    // combination
-
-    // user input
-   
-    
     
     var close = 0
     var exact = 0
     var inputArr = [Int]()
-    static let shared = GameManager()
     var row = 0
     var position = 0
     var buttons:[String] = []
@@ -58,6 +47,17 @@ class GameManager{
     func running(_ input:Int?, _ verify: Bool)->([Line],Game){
         // 1234
         // 4563
+        if let lines = fetchLinesCachedData(){
+            self.lines = lines
+        }
+        guard let positions = fetchCachedData() else {
+            return (lines,gameResult)
+        }
+        
+        
+        row = positions.row
+        position = positions.position
+        
         
         print(pattern)
         guard let input = input else {
@@ -66,14 +66,13 @@ class GameManager{
         
         inputArr.append(input) // 0 4 5
         lines[row].arr[position] = input
-        
+
         position+=1
         
         if inputArr.count == 4{
             
             //            lines[row].verifyArr = ["⚪️","⚫️","⭕️","⭕️"]
             let result = patternMatch(inputArr, pattern)
-            print(lines[0].pattern,"BOOM")
             for _ in 0..<result[0]{
                 buttons.append("⚫️")
             }
@@ -102,6 +101,10 @@ class GameManager{
             gameResult = Game(ongoingGame: false, winner: false, pattern: pattern)
         }
         
+        cacheData(position: Position(row: row, position: position))
+
+        cacheLines(lines: lines)
+
         return (lines,gameResult)
 
     }
@@ -127,6 +130,7 @@ class GameManager{
         }
         
         let exact = Array(zip(pattern,input)).filter{$0.0 == $0.1}.count
+        
         return [exact,close-exact]
     }
     
@@ -143,20 +147,62 @@ class GameManager{
         exact = 0
         inputArr = []
         lines = [
-            Line(arr: [8,8,8,8], verifyArr: ["🟠","🟠","🟠","🟠"], pattern: [1,2,3,4]),
-            Line(arr: [8,8,8,8], verifyArr: ["🟠","🟠","🟠","🟠"], pattern: [1,2,3,4]),
-            Line(arr: [8,8,8,8], verifyArr: ["🟠","🟠","🟠","🟠"], pattern: [1,2,3,4]),
-            Line(arr: [8,8,8,8], verifyArr: ["🟠","🟠","🟠","🟠"], pattern: [1,2,3,4]),
-            Line(arr: [8,8,8,8], verifyArr: ["🟠","🟠","🟠","🟠"], pattern: [1,2,3,4]),
-            Line(arr: [8,8,8,8], verifyArr: ["🟠","🟠","🟠","🟠"], pattern: [1,2,3,4]),
-            Line(arr: [8,8,8,8], verifyArr: ["🟠","🟠","🟠","🟠"], pattern: [1,2,3,4]),
-            Line(arr: [8,8,8,8], verifyArr: ["🟠","🟠","🟠","🟠"], pattern: [1,2,3,4]),
-            Line(arr: [8,8,8,8], verifyArr: ["🟠","🟠","🟠","🟠"], pattern: [1,2,3,4]),
-            Line(arr: [8,8,8,8], verifyArr: ["🟠","🟠","🟠","🟠"], pattern: [1,2,3,4])
+            Line(arr: [8,8,8,8], verifyArr: ["🟠","🟠","🟠","🟠"]),
+            Line(arr: [8,8,8,8], verifyArr: ["🟠","🟠","🟠","🟠"]),
+            Line(arr: [8,8,8,8], verifyArr: ["🟠","🟠","🟠","🟠"]),
+            Line(arr: [8,8,8,8], verifyArr: ["🟠","🟠","🟠","🟠"]),
+            Line(arr: [8,8,8,8], verifyArr: ["🟠","🟠","🟠","🟠"]),
+            Line(arr: [8,8,8,8], verifyArr: ["🟠","🟠","🟠","🟠"]),
+            Line(arr: [8,8,8,8], verifyArr: ["🟠","🟠","🟠","🟠"]),
+            Line(arr: [8,8,8,8], verifyArr: ["🟠","🟠","🟠","🟠"]),
+            Line(arr: [8,8,8,8], verifyArr: ["🟠","🟠","🟠","🟠"]),
+            Line(arr: [8,8,8,8], verifyArr: ["🟠","🟠","🟠","🟠"])
         ]
         gameResult = Game(ongoingGame: true, winner: false, pattern: [1,2,3,4])
         
+        cacheData(position: Position(row: row, position: position))
+        cacheLines(lines: lines)
         return lines
     }
 }
 
+
+extension GameManager{
+
+     func cacheLines(lines: [Line]){
+        try? UserDefaults.standard.set(PropertyListEncoder().encode(lines), forKey: "array")
+    }
+    
+    
+     func fetchLinesCachedData()->[Line]?{
+        guard let data = UserDefaults.standard.value(forKey: "array") as? Data else{
+            fatalError("No Cached Data")
+        }
+        
+        guard let lines = try? PropertyListDecoder().decode([Line].self, from: data) else {
+            fatalError("Items Decod Error")
+        }
+        
+        return lines
+    }
+
+
+    func cacheData(position: Position){
+       try? UserDefaults.standard.set(PropertyListEncoder().encode(position), forKey: "position")
+   }
+
+
+    func fetchCachedData()->Position?{
+       guard let data = UserDefaults.standard.value(forKey: "position") as? Data else{
+           fatalError("No Cached Data")
+       }
+
+       guard let position = try? PropertyListDecoder().decode(Position.self, from: data) else {
+           fatalError("Items Decod Error")
+       }
+
+       return position
+   }
+
+    
+}

@@ -26,7 +26,6 @@ class MainViewController: UIViewController, SettingsViewControllerDelegate {
     @IBOutlet weak var resetButtonOutlet: BounceButton!
     @IBOutlet var inputButtons: [BounceButton]!
     
-
     var donutButtons = [ #imageLiteral(resourceName: "orange"), #imageLiteral(resourceName: "black"), #imageLiteral(resourceName: "white"), #imageLiteral(resourceName: "purple"), #imageLiteral(resourceName: "green"), #imageLiteral(resourceName: "blue"), #imageLiteral(resourceName: "yellow"), #imageLiteral(resourceName: "red")]
     var numberButtons = [ #imageLiteral(resourceName: "0input"), #imageLiteral(resourceName: "1input"), #imageLiteral(resourceName: "2input"), #imageLiteral(resourceName: "3input"), #imageLiteral(resourceName: "4input"), #imageLiteral(resourceName: "5input"), #imageLiteral(resourceName: "6input"), #imageLiteral(resourceName: "7input")]
     var circles = ["🟠","⚫️","⚪️","🟣","🟢","🔵","🟡","🔴"]
@@ -47,16 +46,18 @@ class MainViewController: UIViewController, SettingsViewControllerDelegate {
         tableView.allowsSelection = false
         tableView.isScrollEnabled = false
         tableView.rowHeight = 60
-        
         settingsVC.delegate = self
         settingsVC.toggleStateShared()
-       
-        
 //        resetButtonOutlet.showsTouchWhenHighlighted = true
+        
+        if let lines = GameManager.shared.fetchLinesCachedData(){
+            self.lines = lines
+        }
+        print(lines)
         
         fetchNewPattern()
     }
-    
+ 
     
     
     func setButtonImage(_ index: Int){
@@ -101,7 +102,7 @@ class MainViewController: UIViewController, SettingsViewControllerDelegate {
             case .success(let items):
                 self.itemsLoaded = items
                 DispatchQueue.main.async {
-                    GameManager().fetchPattern(items)
+                    GameManager.shared.fetchPattern(items)
                 }
                 self.matchToNumbers(items)
             case .failure(_):
@@ -128,7 +129,10 @@ class MainViewController: UIViewController, SettingsViewControllerDelegate {
         
         let number = sender.tag
         let result = GameManager.shared.running(number, verifyButtonState)
-        lines = result.0
+        
+//        lines = result.0
+        lines = GameManager.shared.fetchLinesCachedData()
+        print("LINESLINES",lines)
         if result.1.winner{
             print("WIIIIIIIIIINER")
             showWinnerAlert()
@@ -203,8 +207,12 @@ extension MainViewController: UITableViewDataSource{
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! LineTableViewCell
         cell.backgroundColor = .clear
-        lines = GameManager.shared.lines
+//        lines = GameManager.shared.lines
+        lines = GameManager.shared.fetchLinesCachedData()
+//        print("LOAD", GameManager.shared.fetchCachedData())
+
         
+//        print("DATATATATATT",GameManager.shared.fetchCachedData())
         cell.viewModel = LineViewModel(lines: lines!, row: indexPath.row)
         
         return cell

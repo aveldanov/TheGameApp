@@ -356,19 +356,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="51" translatesAutoresizingMaskIntoConstraints="NO" id="38h-Ai-Ioe">
-                                <rect key="frame" x="10" y="128" width="394" height="31"/>
+                                <rect key="frame" x="10" y="128" width="394" height="39"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Game Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZKJ-IC-gfF">
-                                        <rect key="frame" x="0.0" y="0.0" width="101.5" height="31"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="game_type" translatesAutoresizingMaskIntoConstraints="NO" id="Cte-a7-Whb">
+                                        <rect key="frame" x="0.0" y="0.0" width="136" height="39"/>
+                                    </imageView>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Zye-Ri-RkN">
-                                        <rect key="frame" x="152.5" y="0.0" width="241.5" height="32"/>
+                                        <rect key="frame" x="187" y="0.0" width="207" height="40"/>
                                         <segments>
                                             <segment title="Numbers"/>
-                                            <segment title="Circles"/>
+                                            <segment title="Donuts"/>
                                         </segments>
                                         <connections>
                                             <action selector="toggleStateTapped:" destination="h6O-U7-VSv" eventType="valueChanged" id="NMU-GZ-VVA"/>
@@ -439,6 +436,7 @@
         <image name="7input" width="60" height="60"/>
         <image name="Background-Bubbles" width="352" height="102"/>
         <image name="The Game App" width="541" height="91"/>
+        <image name="game_type" width="136" height="39"/>
         <image name="play_small" width="131" height="70"/>
         <image name="reset" width="96" height="36"/>
         <image name="settings_small" width="228" height="70"/>

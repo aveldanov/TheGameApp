@@ -10,20 +10,17 @@ import UIKit
 
 
 protocol SettingsViewControllerDelegate: AnyObject{
-    
     func toggleStateData(_ index:Int)
 }
 
 var toggleState = 0
 
 class SettingsViewController: UIViewController {
-
     
     let defaults = UserDefaults.standard
     
     @IBOutlet weak var toggleOutlet: UISegmentedControl!
     weak var delegate: SettingsViewControllerDelegate?
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,8 +33,6 @@ class SettingsViewController: UIViewController {
         
 //        toggleOutlet.selectedSegmentIndex = toggleState
         toggleOutlet.selectedSegmentIndex = defaults.integer(forKey: Constants.gameSettingsState)
-
-        
     }
     
     @IBAction func toggleStateTapped(_ sender: UISegmentedControl) {
@@ -48,7 +43,7 @@ class SettingsViewController: UIViewController {
     
     
     func toggleStateShared(){
-        delegate?.toggleStateData(toggleState)
+        delegate?.toggleStateData(defaults.integer(forKey: Constants.gameSettingsState))
     }
     
 

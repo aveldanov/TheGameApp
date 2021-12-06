@@ -21,14 +21,14 @@ Created an interactive game app with enabled random number generator API from `r
 ### Technologies/technique used
 
 -    `random.org` API to generate random numbers
--    Use of graphic tools to great visuals - Canva and Appicon
+-    Use of graphic tools to build visuals - Canva and Appicon
 -    Delegate Pattern to transfer data between classes
--    Depenency Injectction to streamline testing
--    External library to animate the textflow
+-    Depenency Injectction to streamline UI testing
+-    External library to animate the label textflow
 -    Combined `tableView` views
 -    MVVM model
 -    Separated business logic from views
--    UserDefaults
+-    Data Persistance - UserDefaults 
 
 
 ### How to clone and run the app
@@ -41,24 +41,24 @@ Go back to Xcode. If no projects are opened, by opening Xcode you’ll see the w
 
 ### Project creation key milestones
 
-1.    Familiarized with the task and options of implementation. 
-2.    Created initial app flow using draw.ai
-3.    Build a basic functionality in Xcode command-line interface with a static input (pattern, array) -
-4.    Wireframed a basic UI design
-5.    Created buttons, visuals using Canva and Appicon tools
-6.    Build the UI interface using Xcode
+1.    Research - Familiarized with the task and options of implementation. 
+2.    Created initial app flow using lucid chart
+3.    Build a basic functionality in Xcode Playground
+4.    Build User Interface in Xcode
+5.    Create API Caller 
+6.    Defined Design Pattern - MVVM
 7.    Moved functionality into the UI view
-8.    Added a 90-second timer to complete the game
-9.    Added a reset functionality to reset the game when you win, lose or time is over
-10.    Tested functionality
-
+8.    Refactor code to access new Settings functionality
+9.    Added a UI unit testing along with refactoring to dependency injection pattern
+10.   Manual QA
 
 
 ### Next Steps
 
 -    UI testing
--    Deeper debugging / Refactoring
+-    Deeper debugging / refactoring
 -    Optional: link to a database to manipulate the state
+-    Adding Legal statement
 -    Deploying in AppStore
 
 

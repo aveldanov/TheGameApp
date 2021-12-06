@@ -7,11 +7,9 @@
 
 import Foundation
 
-
 struct Line: Codable{
     var arr: [Int]
     var verifyArr: [String]
-
 }
 
 

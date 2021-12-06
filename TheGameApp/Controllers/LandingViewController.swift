@@ -12,13 +12,10 @@ class LandingViewController: UIViewController {
 
     @IBOutlet weak var titleLabel: CLTypingLabel!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         titleLabel.text = "🟠Anton Veldanov - 2021🟠"
-
-//
 //        titleLabel.text = ""
 //        let titleText = "🟠The Game"
 //        var charIndex = 0.0
@@ -29,6 +26,4 @@ class LandingViewController: UIViewController {
 //            charIndex+=1
 //        }
     }
-    
-
 }

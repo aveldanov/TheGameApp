@@ -18,7 +18,6 @@ class APICaller{
         self.urlSession = urlSession
     }
     
-    
     func fetchData(_ url: URL, completion: @escaping (Result<[Int],Error>)->Void){
         
         urlSession.dataTask(with: url) { data, response, error in
@@ -32,7 +31,6 @@ class APICaller{
             }
             //TODO Acivity Indicator
             //TODO UserDefaults
-            
             
             if let str = String(data: data, encoding: .utf8){
                 print("datadasjljlskfjlfkj", str)

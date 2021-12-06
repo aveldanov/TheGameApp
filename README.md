@@ -24,10 +24,11 @@ Created an interactive game app with enabled random number generator API from `r
 -    Use of graphic tools to great visuals - Canva and Appicon
 -    Delegate Pattern to transfer data between classes
 -    Depenency Injectction to streamline testing
--    External library to animate textflow
+-    External library to animate the textflow
 -    Combined `tableView` views
 -    MVVM model
 -    Separated business logic from views
+-    UserDefaults
 
 
 ### How to clone and run the app

@@ -10,15 +10,13 @@ import Foundation
 var pattern = [Int]()
 
 class GameManager{
-
+    
     static let shared = GameManager()
-
     var vc = MainViewController()
     
     func fetchPattern(_ items: [Int]){
         pattern = items
     }
-
     
     var lines : [Line] = [
         Line(arr: [8,8,8,8], verifyArr: ["🟠","🟠","🟠","🟠"]),
@@ -32,7 +30,6 @@ class GameManager{
         Line(arr: [8,8,8,8], verifyArr: ["🟠","🟠","🟠","🟠"]),
         Line(arr: [8,8,8,8], verifyArr: ["🟠","🟠","🟠","🟠"])
     ]
-
     
     var close = 0
     var exact = 0
@@ -41,7 +38,6 @@ class GameManager{
     var position = 0
     var buttons:[String] = []
     var gameResult = Game(ongoingGame: true, winner: false, pattern: pattern)
-    
     
     
     func running(_ input:Int?, _ verify: Bool)->([Line],Game){
@@ -54,7 +50,6 @@ class GameManager{
             return (lines,gameResult)
         }
         
-        
         row = positions.row
         position = positions.position
         print(pattern)
@@ -64,11 +59,10 @@ class GameManager{
         
         inputArr.append(input) // 0 4 5
         lines[row].arr[position] = input
-
+        
         position+=1
         
         if inputArr.count == 4{
-            
             let result = patternMatch(inputArr, pattern)
             for _ in 0..<result[0]{
                 buttons.append("⚫️")
@@ -116,7 +110,7 @@ class GameManager{
         for i in input{
             dictInput[i] = (dictInput[i] ?? 0) + 1
         }
-                
+        
         for key in dictPatter.keys{
             if dictInput[key] != nil{
                 close += min(dictInput[key]!,dictPatter[key]!)
@@ -127,7 +121,7 @@ class GameManager{
         return [exact,close-exact]
     }
     
-
+    
     func reset()->[Line]{
         buttons = []
         row = 0
@@ -157,13 +151,13 @@ class GameManager{
 
 
 extension GameManager{
-
-     func cacheLines(lines: [Line]){
+    
+    func cacheLines(lines: [Line]){
         try? UserDefaults.standard.set(PropertyListEncoder().encode(lines), forKey: "array")
     }
     
     
-     func fetchLinesCachedData()->[Line]?{
+    func fetchLinesCachedData()->[Line]?{
         guard let data = UserDefaults.standard.value(forKey: "array") as? Data else{
             fatalError("No Cached Data")
         }
@@ -173,21 +167,21 @@ extension GameManager{
         }
         return lines
     }
-
-
+    
+    
     func cacheData(position: Position){
-       try? UserDefaults.standard.set(PropertyListEncoder().encode(position), forKey: "position")
-   }
-
-
+        try? UserDefaults.standard.set(PropertyListEncoder().encode(position), forKey: "position")
+    }
+    
+    
     func fetchCachedData()->Position?{
-       guard let data = UserDefaults.standard.value(forKey: "position") as? Data else{
-           fatalError("No Cached Data")
-       }
-
-       guard let position = try? PropertyListDecoder().decode(Position.self, from: data) else {
-           fatalError("Items Decod Error")
-       }
-       return position
-   }
+        guard let data = UserDefaults.standard.value(forKey: "position") as? Data else{
+            fatalError("No Cached Data")
+        }
+        
+        guard let position = try? PropertyListDecoder().decode(Position.self, from: data) else {
+            fatalError("Items Decod Error")
+        }
+        return position
+    }
 }

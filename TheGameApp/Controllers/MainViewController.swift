@@ -9,19 +9,16 @@ import UIKit
 
 
 // TODO Alert - New Game, Exit, Cancel - Done
-// TODO Timer -
+// TODO Timer - nah
 // TODO Type-in AppNameLabel - Done
 // TODO Back-button Warning Game Cancel - Done
 // TODO Continue Button  - Done
 // TODO CONSTANTS!!! - Done
 
 
-
-
 class MainViewController: UIViewController, SettingsViewControllerDelegate {
-
     
-
+    
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var resetButtonOutlet: BounceButton!
     @IBOutlet var inputButtons: [BounceButton]!
@@ -29,13 +26,13 @@ class MainViewController: UIViewController, SettingsViewControllerDelegate {
     var donutButtons = [ #imageLiteral(resourceName: "orange"), #imageLiteral(resourceName: "black"), #imageLiteral(resourceName: "white"), #imageLiteral(resourceName: "purple"), #imageLiteral(resourceName: "green"), #imageLiteral(resourceName: "blue"), #imageLiteral(resourceName: "yellow"), #imageLiteral(resourceName: "red")]
     var numberButtons = [ #imageLiteral(resourceName: "0input"), #imageLiteral(resourceName: "1input"), #imageLiteral(resourceName: "2input"), #imageLiteral(resourceName: "3input"), #imageLiteral(resourceName: "4input"), #imageLiteral(resourceName: "5input"), #imageLiteral(resourceName: "6input"), #imageLiteral(resourceName: "7input")]
     var circles = ["🟠","⚫️","⚪️","🟣","🟢","🔵","🟡","🔴"]
-
+    
     var lines: [Line]?
     var verifyButtonState = false
     var itemsLoaded = [Int]()
-
+    
     var itmesLoadedCircles = [String]()
-
+    
     var settingsVC = SettingsViewController()
     
     var toggleState = 0
@@ -48,7 +45,7 @@ class MainViewController: UIViewController, SettingsViewControllerDelegate {
         tableView.rowHeight = 60
         settingsVC.delegate = self
         settingsVC.toggleStateShared()
-//        resetButtonOutlet.showsTouchWhenHighlighted = true
+        //        resetButtonOutlet.showsTouchWhenHighlighted = true
         
         if let lines = GameManager.shared.fetchLinesCachedData(){
             self.lines = lines
@@ -57,7 +54,7 @@ class MainViewController: UIViewController, SettingsViewControllerDelegate {
         
         fetchNewPattern()
     }
- 
+    
     
     
     func setButtonImage(_ index: Int){
@@ -65,13 +62,10 @@ class MainViewController: UIViewController, SettingsViewControllerDelegate {
             for i in 0..<inputButtons.count{
                 inputButtons[i].setImage(donutButtons[i], for: .normal)
             }
-
         }else{
             for i in 0..<inputButtons.count{
                 inputButtons[i].setImage(numberButtons[i], for: .normal)
             }
-
-
         }
     }
     
@@ -94,9 +88,9 @@ class MainViewController: UIViewController, SettingsViewControllerDelegate {
     
     func fetchNewPattern(){
         let urlString = Constants.urlString
-
+        
         let url = URL(string: urlString)!
-
+        
         APICaller().fetchData(url) { result in
             switch result{
             case .success(let items):
@@ -130,7 +124,7 @@ class MainViewController: UIViewController, SettingsViewControllerDelegate {
         let number = sender.tag
         let result = GameManager.shared.running(number, verifyButtonState)
         
-//        lines = result.0
+        //        lines = result.0
         lines = GameManager.shared.fetchLinesCachedData()
         print("LINESLINES",lines)
         if result.1.winner{
@@ -150,11 +144,10 @@ class MainViewController: UIViewController, SettingsViewControllerDelegate {
 }
 
 
- //MARK:  Game Actions Alerts
+//MARK:  Game Actions Alerts
 extension MainViewController{
-
-    func showWinnerAlert(){
     
+    func showWinnerAlert(){
         let alert = UIAlertController(title: "Winner", message: "Need to Celebrate 🎉", preferredStyle: .alert)
         let action = UIAlertAction(title: "Dismiss", style: .cancel) { action in
             print("TAPPED DISMISS")
@@ -166,7 +159,6 @@ extension MainViewController{
     
     
     func showLooserAlertNumbers(){
-        
         print(itmesLoadedCircles)
         let alert = UIAlertController(title: "Loser", message: "The combination was \n \(itemsLoaded)", preferredStyle: .alert)
         let action = UIAlertAction(title: "Dismiss", style: .cancel) { action in
@@ -178,7 +170,6 @@ extension MainViewController{
     }
     
     func showLooserAlertCircles(){
-        
         let alert = UIAlertController(title: "Loser", message: "The combination was \n \(itmesLoadedCircles)", preferredStyle: .alert)
         let action = UIAlertAction(title: "Dismiss", style: .cancel) { action in
             print("TAPPED DISMISS")
@@ -187,7 +178,7 @@ extension MainViewController{
         
         present(alert, animated: true, completion: nil)
     }
-
+    
 }
 
 
@@ -198,7 +189,7 @@ extension MainViewController: UITableViewDataSource{
     func numberOfSections(in tableView: UITableView) -> Int {
         1
     }
-
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 10
     }
@@ -207,12 +198,12 @@ extension MainViewController: UITableViewDataSource{
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! LineTableViewCell
         cell.backgroundColor = .clear
-//        lines = GameManager.shared.lines
+        //        lines = GameManager.shared.lines
         lines = GameManager.shared.fetchLinesCachedData()
-//        print("LOAD", GameManager.shared.fetchCachedData())
-
+        //        print("LOAD", GameManager.shared.fetchCachedData())
         
-//        print("DATATATATATT",GameManager.shared.fetchCachedData())
+        
+        //        print("DATATATATATT",GameManager.shared.fetchCachedData())
         cell.viewModel = LineViewModel(lines: lines!, row: indexPath.row)
         
         return cell

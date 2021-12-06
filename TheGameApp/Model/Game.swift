@@ -7,8 +7,6 @@
 
 import Foundation
 
-
-
 struct Game{
     var ongoingGame: Bool
     var winner: Bool

@@ -24,14 +24,14 @@ class SettingsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
     
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
         
-//        toggleOutlet.selectedSegmentIndex = toggleState
+        //        toggleOutlet.selectedSegmentIndex = toggleState
         toggleOutlet.selectedSegmentIndex = defaults.integer(forKey: Constants.gameSettingsState)
     }
     
@@ -41,10 +41,9 @@ class SettingsViewController: UIViewController {
     }
     
     
-    
     func toggleStateShared(){
         delegate?.toggleStateData(defaults.integer(forKey: Constants.gameSettingsState))
     }
     
-
+    
 }

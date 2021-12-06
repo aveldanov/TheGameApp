@@ -57,8 +57,6 @@ class GameManager{
         
         row = positions.row
         position = positions.position
-        
-        
         print(pattern)
         guard let input = input else {
             return (lines,gameResult)
@@ -71,7 +69,6 @@ class GameManager{
         
         if inputArr.count == 4{
             
-            //            lines[row].verifyArr = ["⚪️","⚫️","⭕️","⭕️"]
             let result = patternMatch(inputArr, pattern)
             for _ in 0..<result[0]{
                 buttons.append("⚫️")
@@ -102,11 +99,8 @@ class GameManager{
         }
         
         cacheData(position: Position(row: row, position: position))
-
         cacheLines(lines: lines)
-
         return (lines,gameResult)
-
     }
     
     
@@ -130,16 +124,11 @@ class GameManager{
         }
         
         let exact = Array(zip(pattern,input)).filter{$0.0 == $0.1}.count
-        
         return [exact,close-exact]
     }
     
 
     func reset()->[Line]{
-        
-//        print(fetchPattern(),"PPPPPPP", lines[0].pattern)
-        
-        
         buttons = []
         row = 0
         position = 0
@@ -182,7 +171,6 @@ extension GameManager{
         guard let lines = try? PropertyListDecoder().decode([Line].self, from: data) else {
             fatalError("Items Decod Error")
         }
-        
         return lines
     }
 
@@ -200,9 +188,6 @@ extension GameManager{
        guard let position = try? PropertyListDecoder().decode(Position.self, from: data) else {
            fatalError("Items Decod Error")
        }
-
        return position
    }
-
-    
 }

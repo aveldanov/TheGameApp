@@ -30,11 +30,8 @@ class MainViewController: UIViewController, SettingsViewControllerDelegate {
     var lines: [Line]?
     var verifyButtonState = false
     var itemsLoaded = [Int]()
-    
     var itmesLoadedCircles = [String]()
-    
     var settingsVC = SettingsViewController()
-    
     var toggleState = 0
     
     override func viewDidLoad() {
@@ -157,7 +154,6 @@ extension MainViewController{
         present(alert, animated: true, completion: nil)
     }
     
-    
     func showLooserAlertNumbers(){
         print(itmesLoadedCircles)
         let alert = UIAlertController(title: "Loser", message: "The combination was \n \(itemsLoaded)", preferredStyle: .alert)
@@ -178,7 +174,6 @@ extension MainViewController{
         
         present(alert, animated: true, completion: nil)
     }
-    
 }
 
 
@@ -201,7 +196,6 @@ extension MainViewController: UITableViewDataSource{
         //        lines = GameManager.shared.lines
         lines = GameManager.shared.fetchLinesCachedData()
         //        print("LOAD", GameManager.shared.fetchCachedData())
-        
         
         //        print("DATATATATATT",GameManager.shared.fetchCachedData())
         cell.viewModel = LineViewModel(lines: lines!, row: indexPath.row)

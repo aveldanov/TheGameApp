@@ -15,7 +15,6 @@ import UIKit
 class LineTableViewCell: UITableViewCell, SettingsViewControllerDelegate {
     
     private var imageSet = [UIImage]()
-    //    let checkLabels = ["⚪️","⚫️","⭕️"]
     var settingsVC = SettingsViewController()
     
     @IBOutlet var imageLineCollection: [UIImageView]!
@@ -27,7 +26,6 @@ class LineTableViewCell: UITableViewCell, SettingsViewControllerDelegate {
     
     var viewModel: LineViewModel?{
         didSet{
-            //            print("BOOOOOOOOm")
             configure()
         }
     }
@@ -54,7 +52,6 @@ class LineTableViewCell: UITableViewCell, SettingsViewControllerDelegate {
     }
     
     func configure(){
-        //        delegate?.refreshViewModel()
         guard let viewModel = viewModel else{
             return
         }
@@ -70,9 +67,5 @@ class LineTableViewCell: UITableViewCell, SettingsViewControllerDelegate {
         checkLabelCollection[1].text = viewModel.lines[row].verifyArr[1]
         checkLabelCollection[2].text = viewModel.lines[row].verifyArr[2]
         checkLabelCollection[3].text = viewModel.lines[row].verifyArr[3]
-    }
-    
-    @IBAction func checkButtonTapped(_ sender: UIButton) {
-        //        checkButtonOutlet.isHidden = true
     }
 }

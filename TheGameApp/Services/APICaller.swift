@@ -22,15 +22,10 @@ class APICaller{
         
         urlSession.dataTask(with: url) { data, response, error in
             guard let data = data, error == nil else {
-                var arrOffline = [Int]()
-                for _ in 0..<4{
-                    arrOffline.append(Int.random(in: 0...7))
-                }
-                completion(.success(arrOffline))
                 return
             }
+            
             //TODO Acivity Indicator
-            //TODO UserDefaults
             
             if let str = String(data: data, encoding: .utf8){
                 print("datadasjljlskfjlfkj", str)

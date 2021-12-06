@@ -41,8 +41,6 @@ class GameManager{
     
     
     func running(_ input:Int?, _ verify: Bool)->([Line],Game){
-        // 1234
-        // 4563
         if let lines = fetchLinesCachedData(){
             self.lines = lines
         }

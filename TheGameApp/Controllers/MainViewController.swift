@@ -42,7 +42,6 @@ class MainViewController: UIViewController, SettingsViewControllerDelegate {
         tableView.rowHeight = 60
         settingsVC.delegate = self
         settingsVC.toggleStateShared()
-        //        resetButtonOutlet.showsTouchWhenHighlighted = true
         
         if let lines = GameManager.shared.fetchLinesCachedData(){
             self.lines = lines
@@ -121,7 +120,6 @@ class MainViewController: UIViewController, SettingsViewControllerDelegate {
         let number = sender.tag
         let result = GameManager.shared.running(number, verifyButtonState)
         
-        //        lines = result.0
         lines = GameManager.shared.fetchLinesCachedData()
         print("LINESLINES",lines)
         if result.1.winner{
@@ -193,11 +191,7 @@ extension MainViewController: UITableViewDataSource{
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! LineTableViewCell
         cell.backgroundColor = .clear
-        //        lines = GameManager.shared.lines
         lines = GameManager.shared.fetchLinesCachedData()
-        //        print("LOAD", GameManager.shared.fetchCachedData())
-        
-        //        print("DATATATATATT",GameManager.shared.fetchCachedData())
         cell.viewModel = LineViewModel(lines: lines!, row: indexPath.row)
         
         return cell

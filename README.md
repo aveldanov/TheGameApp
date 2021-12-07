@@ -33,9 +33,9 @@ Created an interactive game app with enabled random number generator API from `r
 
 ### How to clone and run the app
 
-Head over to the URL (  ) and use it to clone the starting project in Xcode.
+Head over to the provided URL and use it to clone the starting project in Xcode.
 Once the link is clicked it will open a page of the public GitHub repository that hosts the project files. 
-Then on the right side of the page click the green ‘click or download’ button. In the drop-down menu copy the link by pressing the ‘copy’ button. NOTE: The link refers to the actual project and its different from the GitHub page link of the project. 
+Then on the right side of the page click the green ‘click or download’ button. In the drop-down menu copy the link by pressing the ‘copy’ button. 
 Go back to Xcode. If no projects are opened, by opening Xcode you’ll see the welcome screen with the ‘clone an existing project’ option. Otherwise, you can go to the source control menu then clone option. Both options get you to the same screen to paste the URL you copied over from GitHub. As soon as pasted, proceed to cloning and save the project on your computer. Once it's done cloning you should see the project opened. If not, navigate to the folder the project was safed in via Xcode and open it as a saved project
 
 
@@ -45,19 +45,19 @@ Go back to Xcode. If no projects are opened, by opening Xcode you’ll see the w
 2.    Created initial app flow using lucid chart
 3.    Build a basic functionality in Xcode Playground
 4.    Build User Interface in Xcode
-5.    Create API Caller 
+5.    Created API Caller 
 6.    Defined Design Pattern - MVVM
 7.    Moved functionality into the UI view
-8.    Refactor code to access new Settings functionality
-9.    Added a UI unit testing along with refactoring to dependency injection pattern
+8.    Refactored code to access new Settings functionality
+9.    Added the UI unit testing along with refactoring to dependency injection pattern
 10.   Manual QA
 
 
 ### Next Steps
 
--    UI testing
+-    Automation testing
 -    Deeper debugging / refactoring
--    Optional: link to a database to manipulate the state
+-    Optional: link to a database to persist the state
 -    Adding Legal statement
 -    Deploying in AppStore
 
@@ -66,8 +66,7 @@ Go back to Xcode. If no projects are opened, by opening Xcode you’ll see the w
 ### How to play
 
 The pattern combination of 4 numbers is automatically generated. A player should enter numbers 0 through 7 using graphic buttons at the bottom of the screen. Then make sure to click the Check button to get feedback from the game whether the number is guessed correctly.  There are two types of hints.
-Orange dots show the number of digits guess but the position is not correct. The green dots show that the digit and its position is correctly guessed. The player will have 10 attempts to guess the number. 
-
+White dots show the number of digits guess but the position is not correct. The black dots show that the digit and its position is correctly guessed. The player will have 10 attempts to guess the number. 
 
 
 ### The Game App Screenshots
@@ -80,5 +79,5 @@ Orange dots show the number of digits guess but the position is not correct. The
 &nbsp
 <img src="Images/image3.png" alt="drawing" width="180"/>
 &nbsp
-<img src="Images/image5.png" alt="drawing" width="180"/>
+<img src="Images/image4.png" alt="drawing" width="180"/>
 </p>

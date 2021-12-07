@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		21070C1C275EF02F008CE7AF /* image4.png in Resources */ = {isa = PBXBuildFile; fileRef = 21070C1B275EF02F008CE7AF /* image4.png */; };
 		21A8BCE02757508500F7BD54 /* LandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A8BCDF2757508500F7BD54 /* LandingViewController.swift */; };
 		21A8BCE2275752CD00F7BD54 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A8BCE1275752CD00F7BD54 /* SettingsViewController.swift */; };
 		21A8BCE4275755E300F7BD54 /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A8BCE3275755E300F7BD54 /* Line.swift */; };
@@ -60,7 +59,6 @@
 
 /* Begin PBXFileReference section */
 		20344977BD6BA99C9ADFE49E /* Pods-TheGameAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheGameAppTests.release.xcconfig"; path = "Target Support Files/Pods-TheGameAppTests/Pods-TheGameAppTests.release.xcconfig"; sourceTree = "<group>"; };
-		21070C1B275EF02F008CE7AF /* image4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image4.png; sourceTree = "<group>"; };
 		21A8BCDF2757508500F7BD54 /* LandingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingViewController.swift; sourceTree = "<group>"; };
 		21A8BCE1275752CD00F7BD54 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		21A8BCE3275755E300F7BD54 /* Line.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
@@ -210,7 +208,6 @@
 				21A8BDBA275C0FE100F7BD54 /* image1.png */,
 				21A8BDB8275C0FE100F7BD54 /* image2.png */,
 				21A8BDB9275C0FE100F7BD54 /* image3.png */,
-				21070C1B275EF02F008CE7AF /* image4.png */,
 			);
 			path = Images;
 			sourceTree = "<group>";
@@ -424,7 +421,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				21070C1C275EF02F008CE7AF /* image4.png in Resources */,
 				21E0569527572B6700AA01A7 /* LaunchScreen.storyboard in Resources */,
 				21A8BDBE275C0FE200F7BD54 /* image1.png in Resources */,
 				21A8BCEE27575CAB00F7BD54 /* LineTableViewCell.xib in Resources */,

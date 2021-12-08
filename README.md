@@ -49,9 +49,10 @@ Go back to Xcode. If no projects are opened, by opening Xcode you’ll see the w
 5.    Created API Caller 
 6.    Defined Design Pattern - MVVM
 7.    Moved functionality into the UI view
-8.    Refactored code to access new Settings functionality
-9.    Added the UI unit testing along with refactoring to dependency injection pattern
-10.   Manual QA
+8.    Enchanced text fly-in with CocoaPOD - CLTypingLabel
+9.    Refactored code to access new Settings functionality
+10.    Added the UI and Unit testing along with refactoring to dependency injection pattern
+11.   Manual QA
 
 
 ### Next Steps

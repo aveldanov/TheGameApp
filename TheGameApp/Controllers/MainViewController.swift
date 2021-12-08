@@ -42,11 +42,11 @@ class MainViewController: UIViewController, SettingsViewControllerDelegate {
         tableView.rowHeight = 60
         settingsVC.delegate = self
         settingsVC.toggleStateShared()
-        
+        resetButtonOutlet.accessibilityIdentifier = "reset"
         if let lines = GameManager.shared.fetchLinesCachedData(){
             self.lines = lines
         }
-        print("[MainViewController] lines:",lines)
+        print("[MainViewController] lines:", lines)
         fetchNewPattern()
     }
         

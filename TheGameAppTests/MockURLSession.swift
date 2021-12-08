@@ -12,7 +12,6 @@ class MockURLSession: URLProtocol{
     
     static var stubMockData: Data?
     
-    
     override class func canInit(with request: URLRequest) -> Bool {
         return true
     }
@@ -30,6 +29,4 @@ class MockURLSession: URLProtocol{
     override func stopLoading() {
         
     }
-    
-    
 }

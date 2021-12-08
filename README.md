@@ -18,7 +18,7 @@ A player must guess the right number combinations within 10 attempts to win the 
 Created an interactive game app with enabled random number generator API from `random.org.` The app has a graphic UI interface that allows to select numbers by clicking respective buttons. 
  
  
-### Technologies/technique used
+### Technologies used
 
 -    `random.org` API to generate random numbers
 -    Use of graphic tools to build visuals - Canva and Appicon
@@ -29,6 +29,7 @@ Created an interactive game app with enabled random number generator API from `r
 -    MVVM model
 -    Separated business logic from views
 -    Data Persistance - UserDefaults 
+-    Unit and UI testing
 
 
 ### How to clone and run the app

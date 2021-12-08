@@ -34,7 +34,7 @@ Created an interactive game app with enabled random number generator API from `r
 
 ### How to clone and run the app
 
-Head over to the provided URL and use it to clone the starting project in Xcode.
+Head over to the provided URL(https://github.com/aveldanov/TheGameApp) and use it to clone the starting project in Xcode.
 Once the link is clicked it will open a page of the public GitHub repository that hosts the project files. 
 Then on the right side of the page click the green ‘click or download’ button. In the drop-down menu copy the link by pressing the ‘copy’ button. 
 Go back to Xcode. If no projects are opened, by opening Xcode you’ll see the welcome screen with the ‘clone an existing project’ option. Otherwise, you can go to the source control menu then clone option. Both options get you to the same screen to paste the URL you copied over from GitHub. As soon as pasted, proceed to cloning and save the project on your computer. Once it's done cloning you should see the project opened. If not, navigate to the folder the project was safed in via Xcode and open it as a saved project

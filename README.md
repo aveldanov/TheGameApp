@@ -26,7 +26,7 @@ Created an interactive game app with enabled random number generator API from `r
 -    Depenency Injectction to streamline UI testing
 -    External library to animate the label textflow
 -    Combined `tableView` views
--    MVVM model
+-    MVVM model(hybrid)
 -    Separated business logic from views
 -    Data Persistance - UserDefaults 
 -    Unit and UI testing
@@ -47,7 +47,7 @@ Go back to Xcode. If no projects are opened, by opening Xcode you’ll see the w
 3.    Build a basic functionality in Xcode Playground
 4.    Build User Interface in Xcode
 5.    Created API Caller 
-6.    Defined Design Pattern - MVVM
+6.    Defined Design Pattern - MVVM(hybrid)
 7.    Moved functionality into the UI view
 8.    Enchanced text fly-in with CocoaPOD - CLTypingLabel
 9.    Refactored code to access new Settings functionality

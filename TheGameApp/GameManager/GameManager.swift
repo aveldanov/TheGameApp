@@ -12,7 +12,6 @@ var pattern = [Int]()
 class GameManager{
     
     static let shared = GameManager()
-    var vc = MainViewController()
     
     func fetchPattern(_ items: [Int]){
         pattern = items

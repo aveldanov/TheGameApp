@@ -18,7 +18,6 @@ import UIKit
 
 class MainViewController: UIViewController, SettingsViewControllerDelegate {
     
-    
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var resetButtonOutlet: BounceButton!
     @IBOutlet var inputButtons: [BounceButton]!

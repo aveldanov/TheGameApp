@@ -19,29 +19,26 @@ class TheGameAppTests: XCTestCase {
     }
 
     
-//
-//    func testAPICaller_WhenValidInputProvided_ShouldReturnTrue(){
-//
-//        let urlString = Constants.urlString
-//        let sut = APICaller()
-//
-//        let expectation = expectation(description: "waiting on API Caller - URLSession")
-//        sut.fetchData(URL(string: urlString)!) { result in
-//
-//
-//            switch result{
-//            case .success(let items):
-//                XCTAssertEqual(4, items.count)
-//                expectation.fulfill()
-//            case .failure(_):
-//                break
-//            }
-//        }
-//
-//        self.wait(for: [expectation], timeout: 5)
-//    }
-//
-//
+
+    func testAPICaller_WhenValidInputProvided_ShouldReturnTrue(){
+
+        let urlString = Constants.urlString
+        let sut = APICaller()
+        let expectation = expectation(description: "waiting on API Caller - URLSession")
+        sut.fetchData(URL(string: urlString)!) { result in
+            switch result{
+            case .success(let items):
+                XCTAssertEqual(4, items.count)
+                expectation.fulfill()
+            case .failure(_):
+                break
+            }
+        }
+
+        self.wait(for: [expectation], timeout: 5)
+    }
+
+
     
     
     func testAPICaller_WhenValidMockInputProvided_ShouldReturnTrue(){
@@ -58,7 +55,6 @@ class TheGameAppTests: XCTestCase {
         let expectation = expectation(description: "waiting on API Caller - URLSession")
         sut.fetchData(URL(string: urlString)!) { result in
             
-            
             switch result{
             case .success(let items):
                 XCTAssertEqual([1,2,3,4], items)
@@ -67,9 +63,6 @@ class TheGameAppTests: XCTestCase {
                 break
             }
         }
-        
         self.wait(for: [expectation], timeout: 5)
     }
-
-
 }

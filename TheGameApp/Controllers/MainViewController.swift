@@ -46,13 +46,10 @@ class MainViewController: UIViewController, SettingsViewControllerDelegate {
         if let lines = GameManager.shared.fetchLinesCachedData(){
             self.lines = lines
         }
-        print(lines)
-        
+        print("[MainViewController] lines:",lines)
         fetchNewPattern()
     }
-    
-    
-    
+        
     func setButtonImage(_ index: Int){
         if index == 1{
             for i in 0..<inputButtons.count{
@@ -65,22 +62,17 @@ class MainViewController: UIViewController, SettingsViewControllerDelegate {
         }
     }
     
-    
     func matchToNumbers(_ loadedItems: [Int]){
         for i in loadedItems {
             itmesLoadedCircles.append(circles[i])
         }
         print(itmesLoadedCircles)
     }
-    
-    
-    
+        
     func toggleStateData(_ index: Int) {
         setButtonImage(index)
         toggleState = index
     }
-    
-    
     
     func fetchNewPattern(){
         let urlString = Constants.urlString
@@ -101,8 +93,6 @@ class MainViewController: UIViewController, SettingsViewControllerDelegate {
             }
         }
     }
-    
-    
     
     
     @IBAction func resetButtonTapped(_ sender: UIButton) {

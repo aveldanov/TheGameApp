@@ -23,6 +23,4 @@ struct LineViewModel{
     var verifyArrVM: [String]{
         return lines[row].verifyArr
     }
-    
-
 }

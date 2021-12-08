@@ -95,7 +95,6 @@ class GameManager{
         return (lines,gameResult)
     }
     
-    
     func patternMatch(_ input: [Int], _ pattern: [Int])->[Int]{
         var close = 0
         
@@ -118,7 +117,6 @@ class GameManager{
         let exact = Array(zip(pattern,input)).filter{$0.0 == $0.1}.count
         return [exact,close-exact]
     }
-    
     
     func reset()->[Line]{
         buttons = []
@@ -154,7 +152,6 @@ extension GameManager{
         try? UserDefaults.standard.set(PropertyListEncoder().encode(lines), forKey: "array")
     }
     
-    
     func fetchLinesCachedData()->[Line]?{
         guard let data = UserDefaults.standard.value(forKey: "array") as? Data else{
             fatalError("No Cached Data")
@@ -165,12 +162,10 @@ extension GameManager{
         }
         return lines
     }
-    
-    
+
     func cacheData(position: Position){
         try? UserDefaults.standard.set(PropertyListEncoder().encode(position), forKey: "position")
     }
-    
     
     func fetchCachedData()->Position?{
         guard let data = UserDefaults.standard.value(forKey: "position") as? Data else{

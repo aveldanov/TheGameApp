@@ -42,7 +42,6 @@ class LineTableViewCell: UITableViewCell, SettingsViewControllerDelegate {
         super.setSelected(selected, animated: animated)
     }
     
-    
     func toggleStateData(_ index: Int) {
         if index == 0{
             imageSet = [ #imageLiteral(resourceName: "0"), #imageLiteral(resourceName: "1"), #imageLiteral(resourceName: "2"), #imageLiteral(resourceName: "3"), #imageLiteral(resourceName: "4"), #imageLiteral(resourceName: "5"), #imageLiteral(resourceName: "6"), #imageLiteral(resourceName: "7"), #imageLiteral(resourceName: "dash")]

@@ -67,7 +67,7 @@ Go back to Xcode. If no projects are opened, by opening Xcode you’ll see the w
 
 ### How to play
 
-The pattern combination of 4 numbers is automatically generated. A player should enter numbers 0 through 7 using graphic buttons at the bottom of the screen. Then make sure to click the Check button to get feedback from the game whether the number is guessed correctly.  There are two types of hints.
+The pattern combination of 4 numbers(or color combination) is automatically generated. A player should enter numbers 0 through 7 using graphic buttons at the bottom of the screen. Then make sure to click the Check button to get feedback from the game whether the number is guessed correctly.  There are two types of hints.
 White dots show the number of digits guess but the position is not correct. The black dots show that the digit and its position is correctly guessed. The player will have 10 attempts to guess the number. 
 
 

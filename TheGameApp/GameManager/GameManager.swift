@@ -39,8 +39,8 @@ class GameManager{
     var buttons:[String] = []
     var gameResult = Game(ongoingGame: true, winner: false, pattern: pattern)
     
-    
-    func running(_ input:Int?, _ verify: Bool)->([Line],Game){
+    // The running method takes user input and return updateLines and Game State
+    func running(_ input:Int?)->([Line],Game){
         if let lines = fetchLinesCachedData(){
             self.lines = lines
         }
@@ -118,6 +118,7 @@ class GameManager{
         return [exact,close-exact]
     }
     
+    // reset method resets the game
     func reset()->[Line]{
         buttons = []
         row = 0
@@ -145,6 +146,8 @@ class GameManager{
     }
 }
 
+
+//MARK: UserDefaults Caching
 
 extension GameManager{
     

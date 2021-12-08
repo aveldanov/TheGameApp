@@ -34,7 +34,6 @@ class APICaller{
             //TODO Acivity Indicator
             
             if let str = String(data: data, encoding: .utf8){
-                print("datadasjljlskfjlfkj", str)
             let arr = Array(str.filter{!$0.isWhitespace})
                 let arrInt = arr.map{Int(String($0))!}
                 completion(.success(arrInt))

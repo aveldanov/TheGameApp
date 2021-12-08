@@ -28,7 +28,6 @@ class MainViewController: UIViewController, SettingsViewControllerDelegate {
     var circles = ["🟠","⚫️","⚪️","🟣","🟢","🔵","🟡","🔴"]
     
     var lines: [Line]?
-    var verifyButtonState = false
     var itemsLoaded = [Int]()
     var itmesLoadedCircles = [String]()
     var settingsVC = SettingsViewController()
@@ -109,7 +108,7 @@ class MainViewController: UIViewController, SettingsViewControllerDelegate {
     @IBAction func inputButtonTapped(_ sender: UIButton) {
         
         let number = sender.tag
-        let result = GameManager.shared.running(number, verifyButtonState)
+        let result = GameManager.shared.running(number)
         
         lines = GameManager.shared.fetchLinesCachedData()
         print("LINESLINES",lines)

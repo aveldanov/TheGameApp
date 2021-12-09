@@ -32,6 +32,8 @@ class MainViewController: UIViewController, SettingsViewControllerDelegate {
     var settingsVC = SettingsViewController()
     var toggleState = 0
     
+    
+     //MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
@@ -48,6 +50,8 @@ class MainViewController: UIViewController, SettingsViewControllerDelegate {
         fetchNewPattern()
     }
         
+    
+     //MARK: Helpers
     func setButtonImage(_ index: Int){
         if index == 1{
             for i in 0..<inputButtons.count{
@@ -179,7 +183,7 @@ extension MainViewController{
 
 
 
-
+ //MARK: UITableViewDataSource
 extension MainViewController: UITableViewDataSource{
     
     func numberOfSections(in tableView: UITableView) -> Int {

@@ -7,13 +7,8 @@
 
 import UIKit
 
-//
-//protocol LineTableViewCellProtocol: AnyObject{
-//    func refreshViewModel()
-//}
-
 class LineTableViewCell: UITableViewCell, SettingsViewControllerDelegate {
-    
+     //MARK: Properties
     private var imageSet = [UIImage]()
     var settingsVC = SettingsViewController()
     
@@ -21,15 +16,13 @@ class LineTableViewCell: UITableViewCell, SettingsViewControllerDelegate {
     @IBOutlet weak var checkButtonOutlet: UIButton!
     @IBOutlet var checkLabelCollection: [UILabel]!
     
-    
-    //    var delegate: LineTableViewCellProtocol?
-    
     var viewModel: LineViewModel?{
         didSet{
             configure()
         }
     }
     
+    //MARK: Lifecycle
     override func awakeFromNib() {
         super.awakeFromNib()
         checkButtonOutlet.isHidden = true
@@ -38,9 +31,9 @@ class LineTableViewCell: UITableViewCell, SettingsViewControllerDelegate {
         settingsVC.toggleStateShared()
     }
     
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-    }
+//    override func setSelected(_ selected: Bool, animated: Bool) {
+//        super.setSelected(selected, animated: animated)
+//    }
     
     func toggleStateData(_ index: Int) {
         if index == 0{

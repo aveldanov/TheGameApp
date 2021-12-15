@@ -11,6 +11,7 @@ var pattern = [Int]()
 
 class GameManager{
     
+    //MARK: Properties
     static let shared = GameManager()
     
     func fetchPattern(_ items: [Int]){
@@ -40,27 +41,30 @@ class GameManager{
     
     // The running method takes user input and return updateLines and Game State
     func running(_ input:Int?)->([Line],Game){
-        if let lines = fetchLinesCachedData(){
-            self.lines = lines
+        // Lines array from cache
+        if let linesLoadedFromCache = fetchLinesCachedData(){
+            self.lines = linesLoadedFromCache
         }
-        guard let positions = fetchCachedData() else {
+        // current position(row/position) from cache to continue game
+        guard let positions = fetchCurrentPositionCachedData() else {
+            return (lines,gameResult)
+        }
+        
+        guard let input = input else {
             return (lines,gameResult)
         }
         
         row = positions.row
         position = positions.position
-        print(pattern)
-        guard let input = input else {
-            return (lines,gameResult)
-        }
         
-        inputArr.append(input) // 0 4 5
+        inputArr.append(input) // will be reset for each row
         lines[row].arr[position] = input
         
         position+=1
         
+        //Checking completed row
         if inputArr.count == 4{
-            let result = patternMatch(inputArr, pattern)
+            let result = patternMatchCheck(inputArr, pattern)
             for _ in 0..<result[0]{
                 buttons.append("⚫️")
             }
@@ -73,8 +77,9 @@ class GameManager{
                 buttons.append("⭕️")
             }
             
+            //End game winner (exact == rowLength)
             if result[0] == Constants.rowLength{
-                gameResult = Game(ongoingGame: false, winner: true,pattern: pattern)
+                gameResult = Game(ongoingGame: false, winner: true, pattern: pattern)
             }
             
             lines[row].verifyArr = buttons
@@ -85,16 +90,17 @@ class GameManager{
             inputArr = []
         }
         
+        //End of game - out of guesses
         if row == Constants.guesses{
             gameResult = Game(ongoingGame: false, winner: false, pattern: pattern)
         }
         
-        cacheData(position: Position(row: row, position: position))
-        cacheLines(lines: lines)
+        cacheCurrentPositionData(position: Position(row: row, position: position))
+        cacheLinesData(lines: lines)
         return (lines,gameResult)
     }
     
-    func patternMatch(_ input: [Int], _ pattern: [Int])->[Int]{
+    func patternMatchCheck(_ input: [Int], _ pattern: [Int])->[Int]{
         var close = 0
         
         var dictPatter = [Int:Int]()
@@ -139,8 +145,8 @@ class GameManager{
         ]
         gameResult = Game(ongoingGame: true, winner: false, pattern: [1,2,3,4])
         
-        cacheData(position: Position(row: row, position: position))
-        cacheLines(lines: lines)
+        cacheCurrentPositionData(position: Position(row: row, position: position))
+        cacheLinesData(lines: lines)
         return lines
     }
 }
@@ -150,7 +156,7 @@ class GameManager{
 
 extension GameManager{
     
-    func cacheLines(lines: [Line]){
+    func cacheLinesData(lines: [Line]){
         try? UserDefaults.standard.set(PropertyListEncoder().encode(lines), forKey: "array")
     }
     
@@ -165,11 +171,11 @@ extension GameManager{
         return lines
     }
 
-    func cacheData(position: Position){
+    func cacheCurrentPositionData(position: Position){
         try? UserDefaults.standard.set(PropertyListEncoder().encode(position), forKey: "position")
     }
     
-    func fetchCachedData()->Position?{
+    func fetchCurrentPositionCachedData()->Position?{
         guard let data = UserDefaults.standard.value(forKey: "position") as? Data else{
             fatalError("No Cached Data")
         }

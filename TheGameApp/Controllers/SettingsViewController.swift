@@ -22,6 +22,8 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var toggleOutlet: UISegmentedControl!
     weak var delegate: SettingsViewControllerDelegate?
     
+    //MARK: Lifecycle
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -33,6 +35,7 @@ class SettingsViewController: UIViewController {
         toggleOutlet.selectedSegmentIndex = defaults.integer(forKey: Constants.gameSettingsState)
     }
     
+     //MARK: Actions
     @IBAction func toggleStateTapped(_ sender: UISegmentedControl) {
         toggleState = sender.selectedSegmentIndex
         defaults.set(toggleState, forKey: Constants.gameSettingsState)

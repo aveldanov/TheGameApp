@@ -15,6 +15,8 @@ class LandingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         titleLabel.text = "🟠Anton Veldanov - 2021🟠"
+
+// TO DELETE ONCE PRESENTED
 //        titleLabel.text = ""
 //        let titleText = "🟠The Game"
 //        var charIndex = 0.0

@@ -18,6 +18,7 @@ import UIKit
 
 class MainViewController: UIViewController, SettingsViewControllerDelegate {
     
+    //MARK: Properties
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var resetButtonOutlet: BounceButton!
     @IBOutlet var inputButtons: [BounceButton]!
@@ -31,9 +32,8 @@ class MainViewController: UIViewController, SettingsViewControllerDelegate {
     var itmesLoadedCircles = [String]()
     var settingsVC = SettingsViewController()
     var toggleState = 0
-    
-    
-     //MARK: Lifecycle
+        
+    //MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
@@ -46,12 +46,19 @@ class MainViewController: UIViewController, SettingsViewControllerDelegate {
         if let lines = GameManager.shared.fetchLinesCachedData(){
             self.lines = lines
         }
-        print("[MainViewController] lines:", lines)
-        fetchNewPattern()
-    }
         
+        debugPrint("[MainViewController] lines:", lines)
+        
+        if let patternFromCache = fetchCachedPatternData(){
+            itemsLoaded = patternFromCache
+            GameManager.shared.fetchPattern(itemsLoaded)
+        }else{
+            fetchNewPattern()
+        }
+    }
     
-     //MARK: Helpers
+    
+    //MARK: Helpers
     func setButtonImage(_ index: Int){
         if index == 1{
             for i in 0..<inputButtons.count{
@@ -68,9 +75,9 @@ class MainViewController: UIViewController, SettingsViewControllerDelegate {
         for i in loadedItems {
             itmesLoadedCircles.append(circles[i])
         }
-        print(itmesLoadedCircles)
+        debugPrint("[MainViewController] itmesLoadedCircles", itmesLoadedCircles, loadedItems)
     }
-        
+    
     func toggleStateData(_ index: Int) {
         setButtonImage(index)
         toggleState = index
@@ -78,16 +85,14 @@ class MainViewController: UIViewController, SettingsViewControllerDelegate {
     
     func fetchNewPattern(){
         let urlString = Constants.urlString
-        
         let url = URL(string: urlString)!
         
         APICaller().fetchData(url) { result in
             switch result{
             case .success(let items):
                 self.itemsLoaded = items
-                DispatchQueue.main.async {
-                    GameManager.shared.fetchPattern(items)
-                }
+                self.cachePatternData(pattern: items)
+                GameManager.shared.fetchPattern(items)
                 self.matchToNumbers(items)
             case .failure(_):
                 self.noConnectionAlert()
@@ -98,7 +103,7 @@ class MainViewController: UIViewController, SettingsViewControllerDelegate {
     
     
     @IBAction func resetButtonTapped(_ sender: UIButton) {
-        print("reset")
+        debugPrint("[MainViewController] reset tapped")
         fetchNewPattern()
         itmesLoadedCircles = []
         lines = GameManager.shared.reset()
@@ -112,17 +117,16 @@ class MainViewController: UIViewController, SettingsViewControllerDelegate {
         
         let number = sender.tag
         let result = GameManager.shared.running(number)
-        
-        lines = GameManager.shared.fetchLinesCachedData()
-        print("LINESLINES",lines)
+
         if result.1.winner{
-            print("WIIIIIIIIIINER")
+            debugPrint("[MainViewController] Won")
             showWinnerAlert()
         }else if !result.1.ongoingGame && toggleState == 0{
-            print("LOOOOOSER")
-            showLooserAlertNumbers()
+            debugPrint("[MainViewController] Lost")
+            showLostAlertNumbers()
         }else if !result.1.ongoingGame && toggleState == 1{
-            showLooserAlertCircles()
+            debugPrint("[MainViewController] Lost")
+            showLostAlertCircles()
         }
         
         DispatchQueue.main.async {
@@ -138,56 +142,52 @@ extension MainViewController{
     func showWinnerAlert(){
         let alert = UIAlertController(title: "Winner", message: "Need to Celebrate 🎉", preferredStyle: .alert)
         let action = UIAlertAction(title: "Dismiss", style: .cancel) { action in
-            print("TAPPED DISMISS")
+            debugPrint("[MainViewController] DISMISS TAPPED")
         }
         alert.addAction(action)
         
         present(alert, animated: true, completion: nil)
     }
     
-    func showLooserAlertNumbers(){
-        print(itmesLoadedCircles)
-        let alert = UIAlertController(title: "Loser", message: "The combination was \n \(itemsLoaded)", preferredStyle: .alert)
+    func showLostAlertNumbers(){
+        debugPrint(itmesLoadedCircles)
+        let alert = UIAlertController(title: "Bad Luck", message: "The combination was \n \(itemsLoaded)", preferredStyle: .alert)
         let action = UIAlertAction(title: "Dismiss", style: .cancel) { action in
-            print("TAPPED DISMISS")
+            debugPrint("[MainViewController] DISMISS TAPPED")
         }
         alert.addAction(action)
         
         present(alert, animated: true, completion: nil)
     }
     
-    func showLooserAlertCircles(){
-        let alert = UIAlertController(title: "Loser", message: "The combination was \n \(itmesLoadedCircles)", preferredStyle: .alert)
+    func showLostAlertCircles(){
+        let alert = UIAlertController(title: "Bad Luck", message: "The combination was \n \(itmesLoadedCircles)", preferredStyle: .alert)
         let action = UIAlertAction(title: "Dismiss", style: .cancel) { action in
-            print("TAPPED DISMISS")
+            debugPrint("[MainViewController] DISMISS TAPPED")
         }
         alert.addAction(action)
         
         present(alert, animated: true, completion: nil)
     }
-    
     
     func noConnectionAlert(){
-        
         let alert = UIAlertController(title: "No Internet", message: "Please check your connection", preferredStyle: .alert)
-        
         let action = UIAlertAction(title: "Dismiss", style: .cancel) { alert in
-            print("[APICaller] Dismiss Tapped")
+            debugPrint("[MainViewController] Dismiss Tapped")
         }
         alert.addAction(action)
         
         present(alert, animated: true, completion: nil)
     }
-    
 }
 
 
 
- //MARK: UITableViewDataSource
+//MARK: UITableViewDataSource
 extension MainViewController: UITableViewDataSource{
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        1
+        return 1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -195,13 +195,28 @@ extension MainViewController: UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! LineTableViewCell
         cell.backgroundColor = .clear
         lines = GameManager.shared.fetchLinesCachedData()
         cell.viewModel = LineViewModel(lines: lines!, row: indexPath.row)
         
         return cell
+    }
+}
+
+
+//MARK: User Defaults
+extension MainViewController{
+    
+    func cachePatternData(pattern: [Int]){
+        try? UserDefaults.standard.set(pattern, forKey: "pattern")
+    }
+    
+    func fetchCachedPatternData()->[Int]?{
+        guard let pattern = UserDefaults.standard.value(forKey: "pattern") as? [Int] else{
+            fatalError("No Cached Data")
+        }
+        return pattern
     }
 }
 

@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Game{
+struct Game: Codable{
     var ongoingGame: Bool
     var winner: Bool
     var pattern: [Int]

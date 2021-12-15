@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 struct GameViewModel{
     var game: Game
     var winner: Bool{

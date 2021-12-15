@@ -23,9 +23,9 @@ Created an interactive game app with enabled random number generator API from `r
 -    `random.org` API to generate random numbers
 -    Use of graphic tools to build visuals - Canva and Appicon
 -    Delegate Pattern to transfer data between classes
--    Depenency Injectction to streamline UI testing
--    External library to animate the label textflow
--    Combined `tableView` views
+-    Depenency Injectction to streamline Unit testing
+-    External library(POD) to animate the label textflow
+-    Combined `tableView` and `UIView`
 -    MVVM model(hybrid)
 -    Separated business logic from views
 -    Data Persistance - UserDefaults 
@@ -42,7 +42,7 @@ Go back to Xcode. If no projects are opened, by opening Xcode you’ll see the w
 
 ### Project creation key milestones
 
-1.    Research - Familiarized with the task and options of implementation. 
+1.    Research - Familiarized with the task, requirements and options of implementation
 2.    Created initial app flow using lucid chart
 3.    Build a basic functionality in Xcode Playground
 4.    Build User Interface in Xcode
@@ -51,16 +51,19 @@ Go back to Xcode. If no projects are opened, by opening Xcode you’ll see the w
 7.    Moved functionality into the UI view
 8.    Enchanced text fly-in with CocoaPOD - CLTypingLabel
 9.    Refactored code to access new Settings functionality
-10.    Added the UI and Unit testing along with refactoring to dependency injection pattern
+10.   Added the UI and Unit testing along with refactoring to dependency injection pattern
 11.   Manual QA
 
 
 ### Next Steps
 
--    Automation testing
+-    Enhanced automation testing
 -    Deeper debugging / refactoring
+-    Offline Play
+-    Logger Implementation
 -    Optional: link to a database to persist the state
--    Adding Legal statement
+-    Adding Legal/Terms statement
+-    Payment Feature/Subscription Implementation
 -    Deploying in AppStore
 
 

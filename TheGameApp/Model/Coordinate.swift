@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Position: Codable{
+struct Coordinate: Codable{
     var row: Int
     var position: Int
 }

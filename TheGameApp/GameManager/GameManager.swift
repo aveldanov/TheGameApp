@@ -39,14 +39,14 @@ class GameManager{
     var buttons:[String] = []
     var gameResult = Game(ongoingGame: true, winner: false, pattern: pattern)
     
-    // The running method takes user input and return updateLines and Game State
-    func running(_ input:Int?)->([Line],Game){
+    // The running method takes user input and returns updated Lines and Game State
+    func running(_ input: Int?)->([Line],Game){
         // Lines array from cache
         if let linesLoadedFromCache = fetchLinesCachedData(){
             self.lines = linesLoadedFromCache
         }
-        // current position(row/position) from cache to continue game
-        guard let positions = fetchCurrentPositionCachedData() else {
+        // current coordinate(row/position) from cache to continue game
+        guard let currentCoordinate = fetchCurrentPositionCachedData() else {
             return (lines,gameResult)
         }
         
@@ -54,8 +54,8 @@ class GameManager{
             return (lines,gameResult)
         }
         
-        row = positions.row
-        position = positions.position
+        row = currentCoordinate.row
+        position = currentCoordinate.position
         
         inputArr.append(input) // will be reset for each row
         lines[row].arr[position] = input
@@ -95,21 +95,21 @@ class GameManager{
             gameResult = Game(ongoingGame: false, winner: false, pattern: pattern)
         }
         
-        cacheCurrentPositionData(position: Position(row: row, position: position))
+        cacheCurrentPositionData(coordinate: Coordinate(row: row, position: position))
         cacheLinesData(lines: lines)
         return (lines,gameResult)
     }
     
-    func patternMatchCheck(_ input: [Int], _ pattern: [Int])->[Int]{
+    private func patternMatchCheck(_ inputArr: [Int], _ pattern: [Int])->[Int]{
         var close = 0
         
-        var dictPatter = [Int:Int]()
+        var dictPatter = [Int: Int]()
         for i in pattern{
             dictPatter[i] = (dictPatter[i] ?? 0) + 1
         }
         
-        var dictInput = [Int:Int]()
-        for i in input{
+        var dictInput = [Int: Int]()
+        for i in inputArr{
             dictInput[i] = (dictInput[i] ?? 0) + 1
         }
         
@@ -119,7 +119,7 @@ class GameManager{
             }
         }
         
-        let exact = Array(zip(pattern,input)).filter{$0.0 == $0.1}.count
+        let exact = Array(zip(pattern,inputArr)).filter{$0.0 == $0.1}.count
         return [exact,close-exact]
     }
     
@@ -145,7 +145,7 @@ class GameManager{
         ]
         gameResult = Game(ongoingGame: true, winner: false, pattern: [1,2,3,4])
         
-        cacheCurrentPositionData(position: Position(row: row, position: position))
+        cacheCurrentPositionData(coordinate: Coordinate(row: row, position: position))
         cacheLinesData(lines: lines)
         return lines
     }
@@ -171,16 +171,16 @@ extension GameManager{
         return lines
     }
 
-    func cacheCurrentPositionData(position: Position){
-        try? UserDefaults.standard.set(PropertyListEncoder().encode(position), forKey: "position")
+    func cacheCurrentPositionData(coordinate: Coordinate){
+        try? UserDefaults.standard.set(PropertyListEncoder().encode(coordinate), forKey: "position")
     }
     
-    func fetchCurrentPositionCachedData()->Position?{
+    func fetchCurrentPositionCachedData()->Coordinate?{
         guard let data = UserDefaults.standard.value(forKey: "position") as? Data else{
             fatalError("No Cached Data")
         }
         
-        guard let position = try? PropertyListDecoder().decode(Position.self, from: data) else {
+        guard let position = try? PropertyListDecoder().decode(Coordinate.self, from: data) else {
             fatalError("Items Decod Error")
         }
         return position

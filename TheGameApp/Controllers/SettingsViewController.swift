@@ -31,7 +31,6 @@ class SettingsViewController: UIViewController {
     
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
-        //        toggleOutlet.selectedSegmentIndex = toggleState
         toggleOutlet.selectedSegmentIndex = defaults.integer(forKey: Constants.gameSettingsState)
     }
     
